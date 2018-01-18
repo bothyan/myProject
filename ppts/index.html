@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>胜任力评估个人报告</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/echarts.js"></script>
+	<script type="text/javascript" src="js/radialIndicator.min.js"></script>
+</head> 
+<body>
+<script type="text/template" id="template1">
+	<div class="page page-cover">
+		<div class="cover-img"></div>	
+		<div class="cover-msg">
+			<p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 名： <em class="pname">{{name}}</em></p>
+			<p>员工编号： {{identifier}}</p>
+			<p>当前部门： {{department}}</p>
+			<p>当前处室： {{office}}</p>
+			<p>报告日期： 2017年10月30日</p>
+		</div>
+		<div class="logo"></div>
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="center-title">报告阅读须知</div>
+			<p class="style1">1. 本次以发展为导向的胜任力评估，主要目标是希望在行为层面指导员工将自身的职业发展与职位要求、企业目标协同，激发和牵引员工的发展动力。</p>
+			<p class="style1">2. 本报告是基于被评估者在基础能力测试、技能背景审核和绩效回溯三个方面的结果做出的，并非对一个人（在工作和工作以外）全面表现的判断。当综合考虑个人发展时，除了本报告提供的局部特征，还需要综合考虑其它因素。</p>
+			<p class="style1">3. 本报告的有效期为1年，将本报告用作决策参考时，须慎重考虑时效性；本报告是基于被评估者当前的职位做出。如果被评估者的职位发生变化，需要慎重考虑本报告的适用性。</p>
+			<p class="style1">4. 本报告为保密文件，需与其它常规人事文档分开保管，严格控制本报告的传阅。</p>
+		</div>	
+		<div class="footer">
+			<span class="h-title">报告阅读须知</span>
+			<span class="h-num"></span>
+		</div>
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="center-title">报告内容说明</div>
+			<p class="style1">1. 潜质：是由基础能力测试（笔试+加法作业法在线测试）40%+360度胜任测评40%+基本条件梳理（经验、教育经历）20%得分共同计算得出的结果，分为三个等级。</p>
+			<p class="style1">2. 业绩回溯：由了解员工业绩的管理者，根据相对长期的整体印象对员工的业绩水平进行评价。为了保证业绩回溯的公平性，个人业绩受到部门整体业绩和处室整体业绩的影响。即整体业绩更加优秀的部门和处室，个人业绩评优的空间更大。业绩回溯的结果分为A-E五个等级。</p>
+			<p class="style1">3. 潜能绩效综合评估，根据潜能和绩效结果，将员工分为六个区间：</p>
+			<div class="section-table"></div>
+			<div class="pic1"></div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">报告内容说明</span>
+			<span class="h-num"></span>
+		</div>	
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="pic2"></div>
+			<p class="style1" style="margin-top:70px;">4. 素质评估：雷达图显示各项胜任力素质的情况。通用素质的参考线是全公司平均分，管理素质的参考线是相应管理层平均分，专业素质的参考线是该专业平均分。</p>
+		</div>	
+		<div class="footer">
+			<span class="h-title">报告内容说明</span>
+			<span class="h-num"></span>
+		</div>		
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title1">第一部分：潜能和绩效综合评定 </p>
+			<p class="style2">本次评估采集的数据包括：通过360度评估考评被评估者的胜任力素质；通过纸质问卷和在线工具测评被评估者的基础能力；收集了工作经历和学历信息。综合上述各项结果，得到了被测者在岗位上做出优秀绩效的潜质。结合被评估者的业绩回溯结果，首先对被评估者潜能和绩效的综合情况综合情进行定位和评估。成绩计算方法参见附件《考评成绩计算说明》。</p>
+			<p class="style2">图表1：潜能绩效综合评定：</p>
+			<div class="section-table"></div>
+			<p class="title2" style="margin-top:60px;">1.1 综合评定</p>
+			<p class="style3">
+				<em class="pname">{{name}}</em>在本次评估中，业绩回溯等级为<em>{{performanceLevel || "NA"}}</em> ，潜质得分等级为<em>{{potentialLevel || "NA"}}</em>。<em class="pname" style="color:#000;border:0">{{name}}</em>的测评结果处于<em>{{interval}}号区间</em>,这表明{{intervaldes}}
+			</p>
+			<p class="style3">图表2：潜能绩效综合评定得分：</p>
+			<table class="table1" style="">
+				<thead>
+					<tr>
+						<td></td>
+						<td>等级</td>
+						<td>得分*</td>
+						<td>序列内排名</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="background: #b6b6b6">潜质</td>
+						<td>{{potentialLevel || "NA"}}</td>
+						<td>{{potentialScore || "NA"}}</td>
+						<td>{{potentialRanking || "NA"}}</td>
+					<!-- 	<td>74%</td> -->
+					</tr>
+					<tr>
+						<td style="background: #a0a0a0">业绩回溯</td>
+						<td>{{performanceLevel || "NA"}}</td>
+						<td>—</td>
+						<td>—</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- <p class="style4">注：*计算后的总分，**代表超过部门内百分之多少的员工，***代表超过处室内百分之多少的员工。</p> -->
+		</div>	
+		<div class="footer">
+			<span class="h-title">第一部分：潜能和绩效综合评定</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title1">第二部分：胜任力素质分析 </p>
+			<p class="title2">2.1 胜任力素质评估方法：</p>
+			<p class="style3">胜任力素质是影响一个人在岗位上能否做出优秀绩效的关键素质。这些素质包括全员都需要具备的通用素质（来自集团和公司文化、汽车行业和生产特点和保长客管理要求），与岗位分工有关的专业素质和管理相关的素质（仅对管理者而言）。</p>
+			<p class="style3">评价方式：胜任力素质是一个人能力、技能和经验的整合，通过其外在的行为表现出来。因此本次评估中，评估对象对被评估者的一些与素质有关的关键行为进行了评价。有关素质模型的定义、内涵和关键行为的更多内容，参见交付文件《胜任力素质模型》。</p>
+			<p class="style3">胜任力素质可以被培养和改变。通过阅读报告对每个素质的定义、优秀行为的展示和对被评估者每个具体行为的评价，被评估者可以对照调整自身的行为，从而改善胜任力素质。</p>
+			<p class="title3" style="margin-left:-7px">（1）胜任力素质评估结果：</p>
+			<p class="style3">图表3：潜能绩效综合评定：</p>
+			<div class="echarts" id="echarts">
+				<div class="echarts1" id="echarts1"></div>
+				<div class="echarts2" id="echarts2"></div>
+			</div>		
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<table class="table2">
+				<thead>
+					<tr>
+						<td>类型</td>
+						<td>素质</td>
+						<td>得分</td>
+						<td>优势项目*</td>
+						<td>待发展项目**</td>	
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="4">通用素质</td>
+						<td>敬业</td>
+						<td>{{jingye}}</td>
+						<td {{if jingyeyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if jingyedaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td>执行</td>
+						<td>{{zhixing}}</td>
+						<td {{if zhixingyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if zhixingdaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td>客户导向</td>
+						<td>{{kehudaoxiang}}</td>
+						<td {{if kehudaoxiangysbj>0}} class="tag" {{/if}}></td>
+						<td {{if kehudaoxiangdfzbj>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td>制度意识</td>
+						<td>{{zhiduyishi}}</td>
+						<td {{if zhiduyishiyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if zhiduyishidaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td rowspan="4" >专业素质</td>
+						<td id="zhuangye1"></td>
+						<td>{{shichangdaoxiang}}</td>
+						<td {{if shichangdaoxiangyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if shichangdaoxiangdaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td id="zhuangye2"></td>
+						<td>{{goutongxietiao}}</td>
+						<td {{if goutongxietiaoyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if goutongxietiaodaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td id="zhuangye3"></td>
+						<td>{{qianyanzhuizong}}</td>
+						<td {{if qianyanzhuizongyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if qianyanzhuizongdaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td id="zhuangye4"></td>
+						<td>{{xitongsiwei}}</td>
+						<td {{if xitongsiweiyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if xitongsiweidaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					{{if position == "FirstLineManager"}}
+					<tr>
+						<td rowspan="2" >管理素质</td>
+						<td>指导与监控</td>
+						<td>{{zhidaoyujiankong}}</td>
+						<td {{if zhidaoyujiankongyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if zhidaoyujiankongfazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td>激励</td>
+						<td>{{jili}}</td>
+						<td {{if jiliyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if jilidaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>	
+					{{/if}}
+					{{if position == "MiddleManager"}}
+					<tr>
+						<td rowspan="4" >管理素质</td>
+						<td>培养他人</td>
+						<td>{{peiyangtaren}}</td>
+						<td {{if peiyangtarenyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if peiyangtarenfazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td>沟通协调</td>
+						<td>{{goutongxietiao}}</td>
+						<td {{if goutongxietiaoyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if goutongxietiaodaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td>制度构建与优化</td>
+						<td>{{zhidugoujianyouhua}}</td>
+						<td {{if zhidugoujianyouhuayoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if zhidugoujianyouhuadaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>	
+					<tr>
+						<td>全局概念</td>
+						<td>{{quanjuguannian}}</td>
+						<td {{if quanjuguannianyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if quanjuguanniandaifazhanbiaoji>0}} class="tag" {{/if}}></td>
+					</tr>				
+					{{/if}}
+					<tr class="paiming">  
+			            <td colspan="2">总体得分</td> 
+			            <td colspan="3">{{shengrenliScore}}</td>  
+			        </tr> 
+			        <tr class="paiming">  
+			            <td colspan="2">排名</td> 
+			            <td colspan="3">{{shengrenliRanking || "NA"}}</td>  
+			        </tr> 
+				</tbody>
+			</table>
+			<p class="style4" style="margin-top:30px;">注：*得分显著超过平均分（1.5个标准差），其中通用素质对标公司平均分，专业素质对标部门平均分，管理素质对标管理层平均分；<br>**得分显著低于平均分（1.5个标准差），其中通用素质对标公司平均分，专业素质对标部门平均分，管理素质对标管理层平均分；</p>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title2">2.2  胜任力素质详解：</p>
+			<p class="style3">以下是各项胜任力素质的详细定义和典型行为。作为发展性的评估，素质测评希望能够牵引员工表现出公司期待的典型行为。被评估者可以参考自己典型行为的得分对自己日常的行为进行修订，使自己的努力方式和行为方式与公司、部门和岗位的要求更加协同一致。</p>
+			<p class="title3" style="margin-left:-7px">（1）通用素质：</p>
+			<div class="tables">
+				<p class="title">敬业</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>热爱自己的职业，有良好的职业道德和强烈的职业使命感，工作兢兢业业、任劳任怨，为了自己的职业而乐于奉献。</p>
+				<p class="des"><em>[行为表现]</em><span>组织接纳：</span>理解和认同组织文化与价值理念，为自己身为组织一员而感到骄傲。<span>职业使命感：</span>对自己在组织中所扮演的角色与承担的职责有清晰的认识和强烈的使命感，能够积极地将个人的目标与工作职责有机地结合。<span>追求绩优：</span>不论是大事，还是日常的琐碎工作，都试图做得更好，力求精益求精。<span>乐于奉献：</span>能够在攸关组织和团队整体利益的时刻，为了保证整体目标的实现，不计较甚至牺牲“小我”的利益得失，兢兢业业、任劳任怨地工作。</p>
+				<p class="des"><em>[典型行为]</em>1. 他熟悉、理解和认同保长客的愿景和价值观、人和物、经典故事等，对组织的事业发展充满自豪和激情，为自己身为组织一员而感到骄傲。（得分：{{jingyea}}分）<br>2. 他对自己在组织中所扮演的角色与承担的职责有清晰的认识和强烈的使命感，他将个人的职业发展目标与自己承担的工作和保长客的发展紧密联系和协同。（得分：{{jingyeb}}分）<br>3. 不论是大事，还是日常的琐碎工作，他都试图做得更好，力求精益求精。（得分：{{jingyec}}分）<br>4.为了保证整体目标的实现，他在很多时候不计较甚至牺牲“小我”的利益得失，兢兢业业、任劳任怨地工作。（得分：{{jingyed}}分）</p>
+			</div>
+			<!-- <p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<p class="title3" style="margin-left:-7px">（3）管理素质：</p> -->
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<!-- 基本素质 开始-->
+	<div class="page jbsz">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">执行</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>为确保战略计划的达成，通过采用创新性的、严格规范的管理行为，高效率地实施计划、取得成果的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>组织理解力：</span>对组织战略、组织结构等有深刻的认识，能够很快把握事情的关键。<span>可操作性：</span>重视可操作性，具备将笼统的甚至模糊的意向性目标，转化成具体可操作的方案计划的能力。<span>组织与推进：</span>高效组织各类资源，对工作进行分工；善于预见障碍并制定和实施克服障碍的计划；善于运用数据等有力事实鼓动员工的工作热情，将工作朝前推进。<span>工作成效：</span>合理安排时间与资源，确保在规定时限内以较低投入高质量地完成任务。<span>跟进落实：</span>在计划实施过程中，进行适当监控和指导；对责任做具体落实；对方案计划的执行效果进行跟踪、反馈和改进。</p>
+				<p class="des"><em>[典型行为]</em>1. 他对保长客的目标、公司的人员和关系结构有深刻的认识，遇到问题或者承担工作时，能够快速定位解决问题或者推进工作的关键所在。（得分：{{zhixinga}}分）<br>2. 他重视计划和规划的可操作性，具备将笼统的甚至模糊的意向性目标，转化成具体可操作的方案计划的能力。（得分：{{zhixingb}}分）<br>3. 他善于组织各类资源，对工作进行分工或者分配；善于预见障碍并制定和实施克服障碍的计划；善于运用数据等有力事实获取领导或者同事的支持，不断将工作朝前推进。（得分：{{zhixingc}}分）<br>4.他在计划实施过程中，会对进程进行适当监控和指导；对责任做具体的分配和落实；对方案计划的执行效果进行跟踪、反馈和改进。（得分：{{zhixingd}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page jbsz">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">客户导向</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>关注内部和外部客户需求和利益，以追求客户满意为组织工作的中心任务。</p>
+				<p class="des"><em>[行为表现]</em><span>关注客户：</span>深刻理解客户利益与组织利益的关系，利用多种渠道不断了解客户感受，预测客户需求，以此作为改进工作的行动指南。<span>追求客户满意：</span>以赢得客户满意为使命，致力于开发符合客户需求的产品，并持续努力为客户提供快捷、周到和便利的服务。<span>发展客户关系：</span>从客户的角度出发，与客户建立并保持稳固、信任的伙伴关系，在客户中树立良好的组织形象与口碑，以提高客户忠诚度。<span>创造客户价值：</span>关心客户的发展和困难，通过向客户提供可能的支持和帮助，实现组织与客户的双赢。</p>
+				<p class="des"><em>[典型行为]</em>1. 他不仅关注外部客户，而且将公司内部合作的同事和服务对象当做内部客户，倡导“下游、下道工序、下个过程、下个环节等是客户”的理念。（得分：{{kehudaoxianga}}分）<br>2. 他致力于满足客户（和公司内部客户）的需求，并持续努力提供快捷、周到和便利的服务。（得分：{{kehudaoxiangb}}分）<br>3. 他能够与公司客户或者内部合作的同事建立并保持稳固、信任的伙伴关系，在客户或者同事中树立良好的组织形象与口碑，努力建立起与客户或者同事的长期和友好的合作关系。（得分：{{kehudaoxiangc}}分）<br>4.他能够运用先进的工具和方法深入分析研究客户的期望和潜在要求，有针对性的提供优秀产品和服务，提高客户满意度。（得分：{{kehudaoxiangd}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page jbsz">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">制度意识</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对组织管理制度的功能、作用机制与结构有全面的认识和深刻的理解，有通过建立规范的制度来提高组织运作效率的意识。</p>
+				<p class="des"><em>[行为表现]</em><span>制度知识：</span>深入了解公司各项制度的原则、内容和发挥作用的原理和范围。对于涉及本职工作的各项制度熟稔于心。了解公司各项制度之间的衔接和关系。<span>坚持原则：</span>有坚持按制度办事的决心和魄力；同时，使制度得到切实贯彻与执行，而不是流于形式。<span>优化意识：</span>根据执行情况对制度进行客观的评估，了解根据工作任务变化而优化制度的必要。</p>
+				<p class="des"><em>[典型行为]</em>1. 他自觉遵守和严格执行各项制度、流程和规范。（得分：{{zhiduyishia}}分）<br>2.他定期和及时对制度、流程和规范的执行情况进行检查和审核。（得分：{{zhiduyishib}}分）<br>3. 他能够有效监控下属或者自己职权范围内工作的合规性，对“有章不循、有法不依”的情况进行及时和严肃的纠正。（得分：{{zhiduyishic}}分）<br>他注重参加或者举办制度、流程、规范的宣传培训。（得分：{{zhiduyishid}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<!-- 基本素质 结束-->
+	<!-- 专业素质  开始-->
+	<div class="page zysz zysz1">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">市场导向</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>以市场的发展变化作为自己工作的行动指南。</p>
+				<p class="des"><em>[行为表现]</em><span>关注市场：</span>密切关注市场经济环境、客户需求的变化、产品技术的发展，渴望对市场信息充分地掌握。<span>把握市场：</span>运用科学系统的分析方法分析影响市场的各种因素、影响过程和影响结果。<span>寻求商机：</span>对市场需求敏感，能够洞察到隐藏的市场机会，并且提出合理的捕捉市场机会的方案。<span>因市而动：</span>对市场变化反应迅速，利用市场信息指导产品开发、市场营销和联盟拓展等决策。<span>引导市场：</span>根据对地区的经济环境、文化、价值观、客户习惯等方面的深入了解，推出新的产品、服务和竞争策略，引导市场潮流、发掘更大的市场空间。</p>
+				<p class="des"><em>[典型行为]</em>1.在从事产品策划、产品设计、市场推广的工作中，他特别注意结合本公司产品特点，立足市场需求，并以此作为自己工作的行动指南。（得分：<span class="score"></span>分）<br>2.在从事产品策划、产品设计、市场推广的工作中，他充分考虑市场环境的发展与变化、客户的需求变迁、产品技术发展、公司产品和竞品等因素，能够使用文字或其他媒体的形式进行精辟的总结和清晰表达传播。（得分：<span class="score"></span>分）<br>3. 在对竞品和市场趋势、用户特点和需求进行分析的时候，他能够运用多种先进、高效的信息获取和信息分析方法、工具与手段，快速准确地获得来自市场的第一手资料。（得分：<span class="score"></span>分）<br>4.他对密切关注市场机会和市场的最新信息，在日常工作和生活中表现出对市场、客户需求、产品技术的发展和变化非常感兴趣，经常提出这方面的信息和自己的看法。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz1">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">沟通协调</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>在日常工作中妥善处理好上级、同级、下级等各种关系，使其减少摩擦，能够调动各方面的工作积极性的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>积极沟通：</span>重视且乐于沟通，愿意与人建立联系；在遇到沟通障碍时，能够以积极心态和不懈的努力对待冲突和矛盾，而不是强权或回避。<span>换位思考：</span>能够打破自我中心的思维模式，尝试从对方的角度和立场考虑问题，体察对方感受，促进相互理解。<span>及时反馈：</span>重视信息的分享，用心倾听各方的意见，并根据实际情况及时做出调整和回应。<span>机制保证：</span>能够有意识地在组织中搭建沟通平台，通过机制建设确保沟通渠道的顺畅。</p>
+				<p class="des"><em>[典型行为]</em>1. 他愿与人建立联系，重视信息的分享，用心倾听各方的意见，乐于沟通，遇到沟通阻力时，能够以积极心态和不懈的努力应对。（得分：<span class="score"></span>分）<br>2.他能够换位思考，从对方的角度和立场考虑问题，体察对方感受，促进相互理解。（得分：<span class="score"></span>分）<br>3. 他将沟通以任务形式明确到工作日程表中，建立定期沟通的规则，以便于加强协调，实现无缝合作和协同。（得分：<span class="score"></span>分）<br>4.他能够清晰的阐述观点，使下属明确自己的目标和任务，使下属的工作更满足团队的需要。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz1">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">前沿追踪</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>密切关注理论与实践前沿，追踪本组织所在行业发展的热点。</p>
+				<p class="des"><em>[行为表现]</em><span>知识面广博：</span>有深厚扎实的专业理论基础，关注组织成长、壮大的历程与经验，关注不同国家、不同组织经济管理模式的相关知识，具有前瞻性知识。<span>行业动态：</span>积极主动去了解、探求本行业发展的趋势与前景，关注本行业的经济形势与竞争态势。<span>专业灵敏度：</span>对本专业技术的前沿问题具有比较敏锐的洞察力，能够认识、预测到将来发展的广度和深度。</p>
+				<p class="des"><em>[典型行为]</em>1.他关注客户需求、行业技术发展、市场竞争格局等多方面的最新信息，能够以产品生命周期的角度开展工作，充分调研市场，细致分析与预测市场需求。（得分：<span class="score"></span>分）<br>2.他喜欢主动了解、探索保长客所在行业的趋势与前景，非常熟悉本行业的经济形势与竞争态势。（得分：<span class="score"></span>分）<br>3. 他对本专业技术的前沿问题非常了解，具有较强的洞察力，能够发表具有相当深度、广度的分析。（得分：<span class="score"></span>分）<br>4.他非常重视客户的各种需求和反馈信息，能够经常深入一线了解客户的各种体验和感受，通过市场调研客户数据分析，前瞻性地预测市场变化，并能通过各种手段引导客户需求的实现。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz1">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">系统思维</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>把认识对象作为系统，从系统和要素、要素和要素、系统和环境的相互联系、相互作用中综合地考察认识对象的一种思维方法。在分析和处理问题时，能够掌握全局，系统分析各部分和各环节中的复杂因果关系，选择和制定系统的方案计划。表现为：整体性、结构性、立体性、动态性、综合性。</p>
+				<p class="des"><em>[行为表现]</em><span>把握方向：</span>善于排除干扰，抓住问题的关键，清晰地把握思考与决策的方向和目的。<span>打破常规：</span>不固步自封，能够摆脱以往经验的束缚、打破思维定势、建立开放性的思维方式，跳出现有框架，创造性地解决问题。<span>全面性：</span>在开展工作时，要做到整体与部分的统一，既能考虑到有利因素，也要考虑到负面情境发生的可能性及应对方案。<span>当机立断：</span>对实际工作中出现的问题，能够比较快地抓住关键，寻求可行的最佳解决方案，并尽快执行。</p>
+				<p class="des"><em>[典型行为]</em>1.他能够跳出具体问题本身，将零散但重要的信息整合起来，以从错综复杂的情境中抓住主要矛盾，并迅速找到解决问题的办法。（得分：<span class="score"></span>分）<br>2.他有全局意识，在分析问题时，能够把握事物之间的整体性和关联性，在开展工作时，能认识到整体与部分的统一，也能周全考虑到各方面因素。（得分：<span class="score"></span>分）<br>3. 他有极强的系统思维能力，掌握产品生命周期、供应链和价值链管理等专业知识和技能，能够立足全局，在第一时间对出现的关键问题提出科学可行的解决方案。（得分：<span class="score"></span>分）<br>4.他不固步自封，能够打破以往经验的束缚或者思维定势，建立开放性的思维方式，能够跳出现有框架，创造性地解决问题。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz2">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">分析判断</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对已知的事实进行分析推理，把握事情的本质。</p>
+				<p class="des"><em>[行为表现]</em><span>理解能力：</span>能够根据外界提供的信息，结合自己以往的经验与认知，对事物的性质、内涵、状态等形成清晰的认识。<span>判断能力：</span>能够对事物的是与非、对与错、好与坏、真与假等品质做出恰当的评判和区分。<span>推理能力：</span>对事物经过分析、理解、判断以及综合等逻辑思维过程后，得出结论。<span>决断力：</span>对零散结论性信息进行整合加工，分析利弊，做可行性比较，选择最合适的方案。</p>
+				<p class="des"><em>[典型行为]</em>1.他能从零散的信息中，敏锐地洞察问题的真正原因，或者把握用户的潜在需求、社会、行业以及市场等的新动向、新趋势。（得分：<span class="score"></span>分）<br>2.他能够客观冷静地审视情境，对不同来源、表面上相互矛盾的信息进行进一步发掘和整理，从而判断问题产生的根源，澄清问题的关键，为解决问题提出更好的方法和建议。（得分：<span class="score"></span>分）<br>3. 他倾向于为解决问题准备几套解决方案，并对每一方案的利弊做出合理评估，迅速确定相对较好的解决方案，并准备好备用方案。（得分：<span class="score"></span>分）<br>4.他善于并且乐于从过往的工作和问题中总结经验教训，不断提升自身和团队的问题解决能力，为解决问题总结出新的办法和流程。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz2">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">学习发展</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>通过吸取自己或他人经验教训、科研成果等方式，增加学识、提高技能，从而获得有利于未来发展的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>学习意识：</span>对新知识、新技能具有强烈的渴求；积极利用多种途径为自己创造学习机会。<span>经验总结：</span>善于总结成功和失败的经验，以寻找提高自己能力的途径。<span>缺口分析：</span>善于分析自身的知识和工作要求的差距，并快速采取行动弥补之。<span>学习过程：</span>善于利用多种途径为自己创造学习机会，不断尝试新的学习方法。<span>学习目标：</span>能够将个人学习目标与职业生涯规划相结合，并制定相应的学习计划。</p>
+				<p class="des"><em>[典型行为]</em>1.他对新知识、新技能比较敏感，具有强烈的渴求；不断尝试新的学习方法，积极利用各种途径为自己创造学习机会。（得分：<span class="score"></span>分）<br>2.他能够将个人学习目标与公司职位要求和自己在保长客的职业生涯规划相结合，不断分析自身知识、素质与工作要求的差距，并针对这些差距采取行动提升自己。（得分：<span class="score"></span>分）<br>3. 他对于专业方面的知识和技能的落后具有危机意识，努力通过自身不断发展变化和学习进步，积极应对未来的挑战。（得分：<span class="score"></span>分）<br>4.他喜欢以开创性的方式探索提升工作效率的方法，勇于实践，有一定的冒险精神和承受失败挫折的能力。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz2">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">关注细节</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>关注事实和细节，而不是抽象的概念；既考虑到全局，又深入了解关键细节，以细节的完美作为重要的努力方向。</p>
+				<p class="des"><em>[行为表现]</em><span>精益求精：</span>学习并督促下属掌握各种可以提升和改进细节的方法，努力做到更好。<span>严谨求实：</span>工作作风严谨务实，有强烈地寻求事实依据的倾向，愿意看到并尊重事实。<span>细节取胜：</span>相信只有可操作的细节作为保障，才能确保整个计划的成功；督促下属对工作各个环节进行多角度、全方位的考虑，确保计划的严密性。</p>
+				<p class="des"><em>[典型行为]</em>1.他不接受缺陷，不传递缺陷，不制造缺陷；能够努力做到精益求精，追求卓越，使工作结果超出预期。（得分：<span class="score"></span>分）<br>2.他在工作中尊重事实，能够严谨务实地对待工作中确实发生的问题。（得分：<span class="score"></span>分）<br>3. 他学习掌握（并且在职权范围内督促下属学习）各种可以提升和改进细节的方法，坚决认真关注细节，做好每一件事。（得分：<span class="score"></span>分）<br>4.遇到问题，他能够深入了解实际情况，进行深度的调研，掌握第一手资料，分析原因，从源头解决问题。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz2">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">行动力</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>愿意不断学习、思考，养成习惯和动机，进而获得能够产生成功结果的能力。行为的主动性高，具备一定的冒险精神，倾向于在不断尝试、在“做”的过程中学习和提升；对工作的未知因素没有畏难情绪，不怕困难和挫折。</p>
+				<p class="des"><em>[行为表现]</em><span>主动性：</span>主动领受工作任务，积极和上级、同事及下级商讨工作任务中的难点、问题，寻求解决办法与对策。<span>推动力：</span>在面对工作任务时，倾向于立即采取行动，并以自己的行动带动工作的进展。<span>冒险性：</span>更倾向于用“尝试”的方式解决问题，愿意在“做”的过程中发现问题、解决问题；不怕困难和挫折，勇于承担责任和行为后果。<span>自信与坚持：</span>相信自己能将工作做好，有能力解决工作中遇到的困难；具备较坚韧的意志力。</p>
+				<p class="des"><em>[典型行为]</em>1.他的工作总是能够日清日结，而且他对待工作总是行动快速，决策干脆，绝不拖泥带水，推诿拖沓。（得分：<span class="score"></span>分）<br>2.他对于公司领导、同事或下属提出的问题非常重视，能够及时积极地给予反馈。（得分：<span class="score"></span>分）<br>3. 他作为工作的承担者，不仅能及时完成本职工作，而且能够主动推动工作的整体进展。（得分：<span class="score"></span>分）<br>4.接受工作任务时，积极与上下级同事商讨，明确工作中的重点与难点，并寻求最好的方案。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz3">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">分析判断</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对已知的事实进行分析推理，把握事情的本质。</p>
+				<p class="des"><em>[行为表现]</em><span>理解能力：</span>能够根据外界提供的信息，结合自己以往的经验与认知，对事物的性质、内涵、状态等形成清晰的认识。<span>判断能力：</span>能够对事物的是与非、对与错、好与坏、真与假等品质做出恰当的评判和区分。<span>推理能力：</span>对事物经过分析、理解、判断以及综合等逻辑思维过程后，得出结论。<span>决断力：</span>对零散结论性信息进行整合加工，分析利弊，做可行性比较，选择最合适的方案。</p>
+				<p class="des"><em>[典型行为]</em>1.他能从零散的信息中，敏锐地洞察问题的真正原因，或者把握用户的潜在需求、社会、行业以及市场等的新动向、新趋势。（得分：<span class="score"></span>分）<br>2.他能够客观冷静地审视情境，对不同来源、表面上相互矛盾的信息进行进一步发掘和整理，从而判断问题产生的根源，澄清问题的关键，为解决问题提出更好的方法和建议。（得分：<span class="score"></span>分）<br>3. 他倾向于为解决问题准备几套解决方案，并对每一方案的利弊做出合理评估，迅速确定相对较好的解决方案，并准备好备用方案。（得分：<span class="score"></span>分）<br>4.他善于并且乐于从过往的工作和问题中总结经验教训，不断提升自身和团队的问题解决能力，为解决问题总结出新的办法和流程。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz3">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">客户导向</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>关注内部和外部客户需求和利益，以追求客户满意为组织工作的中心任务。</p>
+				<p class="des"><em>[行为表现]</em><span>关注客户：</span>深刻理解客户利益与组织利益的关系，利用多种渠道不断了解客户感受，预测客户需求，以此作为改进工作的行动指南。<span>追求客户满意：</span>以赢得客户满意为使命，致力于开发符合客户需求的产品，并持续努力为客户提供快捷、周到和便利的服务。<span>发展客户关系：</span>从客户的角度出发，与客户建立并保持稳固、信任的伙伴关系，在客户中树立良好的组织形象与口碑，以提高客户忠诚度。<span>创造客户价值：</span>关心客户的发展和困难，通过向客户提供可能的支持和帮助，实现组织与客户的双赢。</p>
+				<p class="des"><em>[典型行为]</em>1. 他不仅关注外部客户，而且将公司内部合作的同事和服务对象当做内部客户，倡导“下游、下道工序、下个过程、下个环节等是客户”的理念。（得分：<span class="score"></span>分）<br>2. 他致力于满足客户（和公司内部客户）的需求，并持续努力提供快捷、周到和便利的服务。（得分：<span class="score"></span>分）<br>3. 他能够与公司客户或者内部合作的同事建立并保持稳固、信任的伙伴关系，在客户或者同事中树立良好的组织形象与口碑，努力建立起与客户或者同事的长期和友好的合作关系。（得分：<span class="score"></span>分）<br>4.他能够运用先进的工具和方法深入分析研究客户的期望和潜在要求，有针对性的提供优秀产品和服务，提高客户满意度。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz3">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">服务精神</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>专注于如何发现并满足客户的需求，并帮助或服务客户的愿望以满足他们的要求。</p>
+				<p class="des"><em>[行为表现]</em><span>了解客户需求：</span>了解并追踪客户的要求、需求、抱怨。让客户对最新项目进展有所了解。<span>保持沟通：</span>与顾客在彼此的期望方面保持沟通，监督客户满意度的执行。给客户提供有益信息和友善的帮助。<span>亲自负责：</span>对客户服务问题采取亲自负责的态度，及时解决问题，不隐瞒不袒护。<span>为客户采取行动：</span>在客户碰到问题时，主动使自己能随时被顾客找到，并及时采取行动。</p>
+				<p class="des"><em>[典型行为]</em>1.他了解并追踪外部客户或者公司内部客户的要求、需求、抱怨，赢得外部客户和内部客户的信赖和尊重。（得分：<span class="score"></span>分）<br>2.在对内和对外服务方面出现问题时，他能够采取细致负责的态度，及时地、不袒护自己地解决问题。（得分：<span class="score"></span>分）<br>3. 他能够在组织中建立或者优化相关服务规范，提升同事的服务意识，监督客户服务的执行，持续完善和改进服务细节。（得分：<span class="score"></span>分）<br>4.在服务对象遇到问题或者有需要时，主动使自己能随时被顾客找到，及时解决客户需求及相关问题。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz3">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">人际交往</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>人与人的相互作用与相互影响，具体地讲就是人与人相互提供产品或服务。对人际交往保持高度的兴趣，能够通过主动、热情的态度以及诚恳、正直的人格面貌赢得他人的尊重和信赖，从而赢得良好的人际交往氛围。</p>
+				<p class="des"><em>[行为表现]</em><span>人际敏感性：</span>对自己及他人的性格、情绪、需要等有敏锐的直觉和认知。<span>热情主动：</span>在人际交往过程中，积极主动地去了解他人或使他人了解自己，体察他人需要，对团队支持性行为保持高度的热情。<span>社会适应性：</span>对人际压力有良好的承受力和应对能力；能够针对不同情境和不同交往对象，灵活使用多种人际技巧和方式，以适应复杂的人际环境。<span>诚信守言：</span>在人际交往过程中，信守承诺，有较强的责任感，表现出诚实正直的品性，使其令人信赖。</p>
+				<p class="des"><em>[典型行为]</em>1.他能够根据环境场合的差异，沟通对象的职业、性别和个性等不同，随机应变地采取不同的表达方式和策略。（得分：<span class="score"></span>分）<br>2.他能够敏锐地感知别人的情绪和需求，善于预测别人的反应，并站在对方的角度思考问题，做好沟通。（得分：<span class="score"></span>分）<br>3.他能够采取恰如其分的方式与对方交流，澄清分歧，技巧性地引导、改变对方的某些想法，最终达成沟通目的。 （得分：<span class="score"></span>分）<br>4.他能够有效地协调上下级之间的关系，增强公司内部的团队合作意识，从而提升团队绩效。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz4">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">分析判断</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对已知的事实进行分析推理，把握事情的本质。</p>
+				<p class="des"><em>[行为表现]</em><span>理解能力：</span>能够根据外界提供的信息，结合自己以往的经验与认知，对事物的性质、内涵、状态等形成清晰的认识。<span>判断能力：</span>能够对事物的是与非、对与错、好与坏、真与假等品质做出恰当的评判和区分。<span>推理能力：</span>对事物经过分析、理解、判断以及综合等逻辑思维过程后，得出结论。<span>决断力：</span>对零散结论性信息进行整合加工，分析利弊，做可行性比较，选择最合适的方案。</p>
+				<p class="des"><em>[典型行为]</em>1.他能从零散的信息中，敏锐地洞察问题的真正原因，或者把握用户的潜在需求、社会、行业以及市场等的新动向、新趋势。（得分：<span class="score"></span>分）<br>2.他能够客观冷静地审视情境，对不同来源、表面上相互矛盾的信息进行进一步发掘和整理，从而判断问题产生的根源，澄清问题的关键，为解决问题提出更好的方法和建议。（得分：<span class="score"></span>分）<br>3. 他倾向于为解决问题准备几套解决方案，并对每一方案的利弊做出合理评估，迅速确定相对较好的解决方案，并准备好备用方案。（得分：<span class="score"></span>分）<br>4.他善于并且乐于从过往的工作和问题中总结经验教训，不断提升自身和团队的问题解决能力，为解决问题总结出新的办法和流程。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz4">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">责任心</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>认识到自己的工作在组织中的重要性，把实现组织的目标当成是自己的目标。</p>
+				<p class="des"><em>[行为表现]</em><span>工作认知：</span>对工作内容、工作权利和职责有清晰而深刻的认识，了解自己所从事的工作对实现组织目标的重要性。<span>成就感：</span>从工作中寻求自身的价值和满足；完成工作能给自己带来巨大的满足感和优越感。<span>乐于奉献：</span>能够在攸关组织和团队整体利益的时刻，为了保障整体目标的实现，不计较甚至牺牲“小我”的利益得失，兢兢业业、任劳任怨地工作。<span>热爱工作：</span>把工作当成是自己的事业来做，愿意把这里作为发展自己的舞台。</p>
+				<p class="des"><em>[典型行为]</em>1.他敢于承担急、难、险、重的任务，敢于在自己职责范内决策并承担责任，不回避不拖延。（得分：<span class="score"></span>分）<br>2.他对在自己的工作岗位上不断钻研学习，精益求精保持创业般的工作热情。（得分：<span class="score"></span>分）<br>3. 他能够从公司利益的角度出发积极的处理公司中出现的突发事件，或者无法明确划分到部门或个人的职责模糊事件。（得分：<span class="score"></span>分）<br>4.即使在有困难，或缺乏监督的情况下仍能够把工作做好。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz4">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">条理性</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>重视规则和秩序；对工作中的各项事务按照紧迫性、重要性区分优先等级，进而有计划、有步骤地安排工作进程，确保工作有条不紊地进行。</p>
+				<p class="des"><em>[行为表现]</em><span>工作认知：</span>了解其工作对实现组织目标的重要性，清晰地知道自己的角色和职责。<span>统筹能力：</span>根据事务的重要性和紧迫程度，对人力、物力以及时间等资源进行相应的规划与安排，确保在规定的时限内按质、按量地完成工作事务。<span>计划性：</span>详细周到地考虑工作计划——确定实现工作目标的具体手段和方法，预定出目标的进程及步骤。<span>自我控制：</span>对目标保持良好的坚持性，不因额外因素的干扰而经常改变工作计划，从而确保自己的工作行为与工作目标实现的方向一致。</p>
+				<p class="des"><em>[典型行为]</em>1.他总是详细周到地安排工作计划，设计和制定工作流程、细化步骤、落实细节，将目标转化成可执行的具体方案。（得分：<span class="score"></span>分）<br>2.他在计划中留有余地，因此很少会被额外因素干扰而经常改变工作计划。在工作中他经常检查，确保自己的工作行为与工作目标实现的方向一致。（得分：<span class="score"></span>分）<br>3.他能够在很短时间内，判断完成某项任务所需投入的时间和各种资源，并根据事务的重要性和紧迫程度进行妥善的统筹安排，以确保工作成果。（得分：<span class="score"></span>分）<br>4.对计划执行过程进行跟踪，对计划的推进节奏进行控制，对暴露的问题及时处理，并根据具体情况对计划做出相应调整。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz4">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">执行</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>为确保战略计划的达成，通过采用创新性的、严格规范的管理行为，高效率地实施计划、取得成果的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>组织理解力：</span>对组织战略、组织结构等有深刻的认识，能够很快把握事情的关键。<span>可操作性：</span>重视可操作性，具备将笼统的甚至模糊的意向性目标，转化成具体可操作的方案计划的能力。<span>组织与推进：</span>高效组织各类资源，对工作进行分工；善于预见障碍并制定和实施克服障碍的计划；善于运用数据等有力事实鼓动员工的工作热情，将工作朝前推进。<span>工作成效：</span>合理安排时间与资源，确保在规定时限内以较低投入高质量地完成任务。<span>跟进落实：</span>在计划实施过程中，进行适当监控和指导；对责任做具体落实；对方案计划的执行效果进行跟踪、反馈和改进。</p>
+				<p class="des"><em>[典型行为]</em>1. 他对保长客的目标、公司的人员和关系结构有深刻的认识，遇到问题或者承担工作时，能够快速定位解决问题或者推进工作的关键所在。（得分：<span class="score"></span>分）<br>2. 他重视计划和规划的可操作性，具备将笼统的甚至模糊的意向性目标，转化成具体可操作的方案计划的能力。（得分：<span class="score"></span>分）<br>3. 他善于组织各类资源，对工作进行分工或者分配；善于预见障碍并制定和实施克服障碍的计划；善于运用数据等有力事实获取领导或者同事的支持，不断将工作朝前推进。（得分：<span class="score"></span>分）<br>4.他在计划实施过程中，会对进程进行适当监控和指导；对责任做具体的分配和落实；对方案计划的执行效果进行跟踪、反馈和改进。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz5">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">市场导向</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>以市场的发展变化作为自己工作的行动指南。</p>
+				<p class="des"><em>[行为表现]</em><span>关注市场：</span>密切关注市场经济环境、客户需求的变化、产品技术的发展，渴望对市场信息充分地掌握。<span>把握市场：</span>运用科学系统的分析方法分析影响市场的各种因素、影响过程和影响结果。<span>寻求商机：</span>对市场需求敏感，能够洞察到隐藏的市场机会，并且提出合理的捕捉市场机会的方案。<span>因市而动：</span>对市场变化反应迅速，利用市场信息指导产品开发、市场营销和联盟拓展等决策。<span>引导市场：</span>根据对地区的经济环境、文化、价值观、客户习惯等方面的深入了解，推出新的产品、服务和竞争策略，引导市场潮流、发掘更大的市场空间。</p>
+				<p class="des"><em>[典型行为]</em>1.在从事产品策划、产品设计、市场推广的工作中，他特别注意结合本公司产品特点，立足市场需求，并以此作为自己工作的行动指南。（得分：<span class="score"></span>分）<br>2.在从事产品策划、产品设计、市场推广的工作中，他充分考虑市场环境的发展与变化、客户的需求变迁、产品技术发展、公司产品和竞品等因素，能够使用文字或其他媒体的形式进行精辟的总结和清晰表达传播。（得分：<span class="score"></span>分）<br>3. 在对竞品和市场趋势、用户特点和需求进行分析的时候，他能够运用多种先进、高效的信息获取和信息分析方法、工具与手段，快速准确地获得来自市场的第一手资料。（得分：<span class="score"></span>分）<br>4.他对密切关注市场机会和市场的最新信息，在日常工作和生活中表现出对市场、客户需求、产品技术的发展和变化非常感兴趣，经常提出这方面的信息和自己的看法。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz5">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">人际交往</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>人与人的相互作用与相互影响，具体地讲就是人与人相互提供产品或服务。对人际交往保持高度的兴趣，能够通过主动、热情的态度以及诚恳、正直的人格面貌赢得他人的尊重和信赖，从而赢得良好的人际交往氛围。</p>
+				<p class="des"><em>[行为表现]</em><span>人际敏感性：</span>对自己及他人的性格、情绪、需要等有敏锐的直觉和认知。<span>热情主动：</span>在人际交往过程中，积极主动地去了解他人或使他人了解自己，体察他人需要，对团队支持性行为保持高度的热情。<span>社会适应性：</span>对人际压力有良好的承受力和应对能力；能够针对不同情境和不同交往对象，灵活使用多种人际技巧和方式，以适应复杂的人际环境。<span>诚信守言：</span>在人际交往过程中，信守承诺，有较强的责任感，表现出诚实正直的品性，使其令人信赖。</p>
+				<p class="des"><em>[典型行为]</em>1.他能够根据环境场合的差异，沟通对象的职业、性别和个性等不同，随机应变地采取不同的表达方式和策略。（得分：<span class="score"></span>分）<br>2.他能够敏锐地感知别人的情绪和需求，善于预测别人的反应，并站在对方的角度思考问题，做好沟通。（得分：<span class="score"></span>分）<br>3.他能够采取恰如其分的方式与对方交流，澄清分歧，技巧性地引导、改变对方的某些想法，最终达成沟通目的。 （得分：<span class="score"></span>分）<br>4.他能够有效地协调上下级之间的关系，增强公司内部的团队合作意识，从而提升团队绩效。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz5">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">关系建立</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>指与有助于或可能有助于完成工作相关目标的人，建立或维持友善、温暖的关系或联系网络的能力。这种能力还被理解为建立网络、资源利用、开发人脉、对顾客的关切、建立融洽的关系的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>能进行非正式接触：</span>能与他人在工作环境之外进行非正式接触.包括就工作相关问题或孩子、运动、新闻等随意闲聊。<span>建立融洽关系：</span>能在朋友和熟人中建立或保持一个广泛的融洽圈。能与同行、客户或其它俱乐部、餐厅、社会上的朋友们保持友好的关系。<span>建立社交关系：</span>提到举行晚会、郊游或其它特殊聚会以改善或加强相互关系。积极参与现有的社交关系活动。<span>建立个人之间的友谊：</span>友谊的建立包括谈及个人的一些隐密以建立或保持融洽的关系。承认在取得某项业务目标时某位自己的朋友或熟人的贡献。</p>
+				<p class="des"><em>[典型行为]</em>1.他能够与工作有关的客户、同行或者别人在工作环境之外（比如车展、专业研讨会等）进行成效的非正式接触。（得分：<span class="score"></span>分）<br>2.他能与熟人、同行、客户或其它社会渠道（俱乐部、兴趣小组）等认识的朋友们保持友好的关系。（得分：<span class="score"></span>分）<br>3. 他对于认识陌生人和强化与熟人的关系具有较大的积极性，很乐于参与一些晚会、郊游或其它特殊聚会以改善或加强相互关系。（得分：<span class="score"></span>分）<br>4.他能够通过一些工具（Excel、手机应用、微信分类等）主动和有效管理自己的人际关系网络。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz5">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">资源整合</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>从宏观上考虑资源的配置，将各种资源(人力、物力和财力)合理组织起来，尽可能地提高资源利用效率，促进资源的增值和发展。</p>
+				<p class="des"><em>[行为表现]</em><span>洞察资源：</span>具备开阔的视野和敏锐的直觉，能够洞察内外部各种资源的价值、需求和增值前景。<span>资源集成：</span>善于将各种分散的资源集中和组合起来，通过全盘思考与协调组织，将这些资源进行统一分配使用，使其使用率达到最大化。<span>成本/效益分析：</span>在制定各种决策和计划时，客观地考虑资源投入的成本、预期的回收价值和回收期长短。<span>借力：</span>通过对外部资源的有效利用，弥补组织自身资源的不足，缩小战略目标与资源条件的差距。</p>
+				<p class="des"><em>[典型行为]</em>1.他思维开阔，在考虑资源的时候，不仅关注当下的资源，而且考虑到外部可以整合的资源和内部的潜在资源，并能将资源投向最有价值的核心业务。（得分：<span class="score"></span>分）<br>2.他能够通过对外部资源（合作伙伴等）的有效利用，弥补组织自身资源的不足，在有限的资源条件下达成目标。（得分：<span class="score"></span>分）<br>3. 他善长对公司各个层面资源和能力进行客观分析和判断，能够敏锐洞察各种资源的价值，能够整合各方面的资源，擅长获得领导和其他部门的支持。（得分：<span class="score"></span>分）<br>4.他善于利用日常生活中的各种场合和媒体，以其自身的声誉、专业性、个人品牌，运用生动活泼、喜闻乐见的方式，主动展现和宣传保长客和长安的品牌和理念。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz6">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">绩效导向</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>以绩效结果作为衡量工作成效的主要依据；重点关注提高绩效、实现目标和产出结果。</p>
+				<p class="des"><em>[行为表现]</em><span>设置目标：</span>为自己、下属和组织设定清晰、可衡量的、具有挑战性的工作目标。<span>跟踪绩效：</span>密切关注目标的实现状况，掌握工作进展。<span>提升绩效：</span>主动探询影响绩效的问题和机会，寻求改进绩效的方法。</p>
+				<p class="des"><em>[典型行为]</em>1. 他坚持以绩效结果作为衡量自己和其它工作者成效的主要依据，评价标准主要是关注提高绩效、实现目标和产出结果。（得分：<span class="score"></span>分）<br>2. 他能够积极主动能地为自己、下属及组织设定清晰、可衡量、具有挑战性，而且可以通过努力实现的目标。（得分：<span class="score"></span>分）<br>3. 他能够从公司目标和部门目标出发，有效分解目标，形成对自己和下属的科学的绩效指标。（得分：<span class="score"></span>分）<br>4.他重视绩效达成情况，能够实时跟踪与监控自己或者下属绩效进展，随时进行反馈、辅导与调整。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz6">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">行动力</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>愿意不断学习、思考，养成习惯和动机，进而获得能够产生成功结果的能力。行为的主动性高，具备一定的冒险精神，倾向于在不断尝试、在“做”的过程中学习和提升；对工作的未知因素没有畏难情绪，不怕困难和挫折。</p>
+				<p class="des"><em>[行为表现]</em><span>主动性：</span>主动领受工作任务，积极和上级、同事及下级商讨工作任务中的难点、问题，寻求解决办法与对策。<span>推动力：</span>在面对工作任务时，倾向于立即采取行动，并以自己的行动带动工作的进展。<span>冒险性：</span>更倾向于用“尝试”的方式解决问题，愿意在“做”的过程中发现问题、解决问题；不怕困难和挫折，勇于承担责任和行为后果。<span>自信与坚持：</span>相信自己能将工作做好，有能力解决工作中遇到的困难；具备较坚韧的意志力。</p>
+				<p class="des"><em>[典型行为]</em>1.他的工作总是能够日清日结，而且他对待工作总是行动快速，决策干脆，绝不拖泥带水，推诿拖沓。（得分：<span class="score"></span>分）<br>2.他对于公司领导、同事或下属提出的问题非常重视，能够及时积极地给予反馈。（得分：<span class="score"></span>分）<br>3. 他作为工作的承担者，不仅能及时完成本职工作，而且能够主动推动工作的整体进展。（得分：<span class="score"></span>分）<br>4.接受工作任务时，积极与上下级同事商讨，明确工作中的重点与难点，并寻求最好的方案。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz6">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">关系建立</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>指与有助于或可能有助于完成工作相关目标的人，建立或维持友善、温暖的关系或联系网络的能力。这种能力还被理解为建立网络、资源利用、开发人脉、对顾客的关切、建立融洽的关系的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>能进行非正式接触：</span>能与他人在工作环境之外进行非正式接触.包括就工作相关问题或孩子、运动、新闻等随意闲聊。<span>建立融洽关系：</span>能在朋友和熟人中建立或保持一个广泛的融洽圈。能与同行、客户或其它俱乐部、餐厅、社会上的朋友们保持友好的关系。<span>建立社交关系：</span>提到举行晚会、郊游或其它特殊聚会以改善或加强相互关系。积极参与现有的社交关系活动。<span>建立个人之间的友谊：</span>友谊的建立包括谈及个人的一些隐密以建立或保持融洽的关系。承认在取得某项业务目标时某位自己的朋友或熟人的贡献。</p>
+				<p class="des"><em>[典型行为]</em>1.他能够与工作有关的客户、同行或者别人在工作环境之外（比如车展、专业研讨会等）进行成效的非正式接触。（得分：<span class="score"></span>分）<br>2.他能与熟人、同行、客户或其它社会渠道（俱乐部、兴趣小组）等认识的朋友们保持友好的关系。（得分：<span class="score"></span>分）<br>3. 他对于认识陌生人和强化与熟人的关系具有较大的积极性，很乐于参与一些晚会、郊游或其它特殊聚会以改善或加强相互关系。（得分：<span class="score"></span>分）<br>4.他能够通过一些工具（Excel、手机应用、微信分类等）主动和有效管理自己的人际关系网络。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz6">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">资源整合</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>从宏观上考虑资源的配置，将各种资源(人力、物力和财力)合理组织起来，尽可能地提高资源利用效率，促进资源的增值和发展。</p>
+				<p class="des"><em>[行为表现]</em><span>洞察资源：</span>具备开阔的视野和敏锐的直觉，能够洞察内外部各种资源的价值、需求和增值前景。<span>资源集成：</span>善于将各种分散的资源集中和组合起来，通过全盘思考与协调组织，将这些资源进行统一分配使用，使其使用率达到最大化。<span>成本/效益分析：</span>在制定各种决策和计划时，客观地考虑资源投入的成本、预期的回收价值和回收期长短。<span>借力：</span>通过对外部资源的有效利用，弥补组织自身资源的不足，缩小战略目标与资源条件的差距。</p>
+				<p class="des"><em>[典型行为]</em>1.他思维开阔，在考虑资源的时候，不仅关注当下的资源，而且考虑到外部可以整合的资源和内部的潜在资源，并能将资源投向最有价值的核心业务。（得分：<span class="score"></span>分）<br>2.他能够通过对外部资源（合作伙伴等）的有效利用，弥补组织自身资源的不足，在有限的资源条件下达成目标。（得分：<span class="score"></span>分）<br>3. 他善长对公司各个层面资源和能力进行客观分析和判断，能够敏锐洞察各种资源的价值，能够整合各方面的资源，擅长获得领导和其他部门的支持。（得分：<span class="score"></span>分）<br>4.他善于利用日常生活中的各种场合和媒体，以其自身的声誉、专业性、个人品牌，运用生动活泼、喜闻乐见的方式，主动展现和宣传保长客和长安的品牌和理念。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz7">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">市场导向</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>以市场的发展变化作为自己工作的行动指南。</p>
+				<p class="des"><em>[行为表现]</em><span>关注市场：</span>密切关注市场经济环境、客户需求的变化、产品技术的发展，渴望对市场信息充分地掌握。<span>把握市场：</span>运用科学系统的分析方法分析影响市场的各种因素、影响过程和影响结果。<span>寻求商机：</span>对市场需求敏感，能够洞察到隐藏的市场机会，并且提出合理的捕捉市场机会的方案。<span>因市而动：</span>对市场变化反应迅速，利用市场信息指导产品开发、市场营销和联盟拓展等决策。<span>引导市场：</span>根据对地区的经济环境、文化、价值观、客户习惯等方面的深入了解，推出新的产品、服务和竞争策略，引导市场潮流、发掘更大的市场空间。</p>
+				<p class="des"><em>[典型行为]</em>1.在从事产品策划、产品设计、市场推广的工作中，他特别注意结合本公司产品特点，立足市场需求，并以此作为自己工作的行动指南。（得分：<span class="score"></span>分）<br>2.在从事产品策划、产品设计、市场推广的工作中，他充分考虑市场环境的发展与变化、客户的需求变迁、产品技术发展、公司产品和竞品等因素，能够使用文字或其他媒体的形式进行精辟的总结和清晰表达传播。（得分：<span class="score"></span>分）<br>3. 在对竞品和市场趋势、用户特点和需求进行分析的时候，他能够运用多种先进、高效的信息获取和信息分析方法、工具与手段，快速准确地获得来自市场的第一手资料。（得分：<span class="score"></span>分）<br>4.他对密切关注市场机会和市场的最新信息，在日常工作和生活中表现出对市场、客户需求、产品技术的发展和变化非常感兴趣，经常提出这方面的信息和自己的看法。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz7">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">成就导向</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>指为自己及所管理的组织设立目标、提高工作效率和绩效的动机与愿望。个人希望出色地完成任务，愿意从事具有挑战性的任务。这种人在工作中有强烈地表现自己能力的愿望，不断地为自己设立更高的标准，努力不懈地追求事业上的进步。</p>
+				<p class="des"><em>[行为表现]</em><span>自我愿景：</span>有符合社会和组织利益的理想抱负，愿意为之实现而不懈努力，并能够承受困难与挫折，甚至牺牲眼前利益。<span>内激励：</span>成功体验主要来源于做好工作本身所带来的乐趣，而不依赖于外在的荣誉和报酬。<span>行动性：</span>对工作热情投入，乐于不断采取行动以推动事情进展，对出色完成任务、取得工作成果有强烈的渴望。<span>挑战性目标：</span>不满足于现状，敢于冒险，毫不畏惧地为自己和组织设定挑战性的目标，不断追求超越自我，开发和调动潜能。<span>高标准：</span>对人对事有比较严格的要求，愿意使事情更接近完美，并努力驱动自己和他人为了做得更好而继续努力。</p>
+				<p class="des"><em>[典型行为]</em>1.在工作中，他不满足于现状，对成功具有强烈的渴求，不断挑战自我，为了达到或者超越目标，自愿付出额外的精力和时间。（得分：<span class="score"></span>分）<br>2.他对工作有一种完美化的追求，对自己以及员工要求极高，坚持时时改进、事事改进、处处改进。（得分：<span class="score"></span>分）<br>3. 具备强烈的进取心，在工作上满怀激情，即便面对各种艰难困苦，依然执著追求，想尽办法破除障碍。（得分：<span class="score"></span>分）<br>4.他不满足于现状，不断设定高目标，每日超越、每周精益、追求高绩效。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz7">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">学习发展</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>通过吸取自己或他人经验教训、科研成果等方式，增加学识、提高技能，从而获得有利于未来发展的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>学习意识：</span>对新知识、新技能具有强烈的渴求；积极利用多种途径为自己创造学习机会。<span>经验总结：</span>善于总结成功和失败的经验，以寻找提高自己能力的途径。<span>缺口分析：</span>善于分析自身的知识和工作要求的差距，并快速采取行动弥补之。<span>学习过程：</span>善于利用多种途径为自己创造学习机会，不断尝试新的学习方法。<span>学习目标：</span>能够将个人学习目标与职业生涯规划相结合，并制定相应的学习计划。</p>
+				<p class="des"><em>[典型行为]</em>1.他对新知识、新技能比较敏感，具有强烈的渴求；不断尝试新的学习方法，积极利用各种途径为自己创造学习机会。（得分：<span class="score"></span>分）<br>2.他能够将个人学习目标与公司职位要求和自己在保长客的职业生涯规划相结合，不断分析自身知识、素质与工作要求的差距，并针对这些差距采取行动提升自己。（得分：<span class="score"></span>分）<br>3. 他对于专业方面的知识和技能的落后具有危机意识，努力通过自身不断发展变化和学习进步，积极应对未来的挑战。（得分：<span class="score"></span>分）<br>4.他喜欢以开创性的方式探索提升工作效率的方法，勇于实践，有一定的冒险精神和承受失败挫折的能力。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz7">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">前沿追踪</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>密切关注理论与实践前沿，追踪本组织所在行业发展的热点。</p>
+				<p class="des"><em>[行为表现]</em><span>知识面广博：</span>有深厚扎实的专业理论基础，关注组织成长、壮大的历程与经验，关注不同国家、不同组织经济管理模式的相关知识，具有前瞻性知识。<span>行业动态：</span>积极主动去了解、探求本行业发展的趋势与前景，关注本行业的经济形势与竞争态势。<span>专业灵敏度：</span>对本专业技术的前沿问题具有比较敏锐的洞察力，能够认识、预测到将来发展的广度和深度。</p>
+				<p class="des"><em>[典型行为]</em>1.他关注客户需求、行业技术发展、市场竞争格局等多方面的最新信息，能够以产品生命周期的角度开展工作，充分调研市场，细致分析与预测市场需求。（得分：<span class="score"></span>分）<br>2.他喜欢主动了解、探索保长客所在行业的趋势与前景，非常熟悉本行业的经济形势与竞争态势。（得分：<span class="score"></span>分）<br>3. 他对本专业技术的前沿问题非常了解，具有较强的洞察力，能够发表具有相当深度、广度的分析。（得分：<span class="score"></span>分）<br>4.他非常重视客户的各种需求和反馈信息，能够经常深入一线了解客户的各种体验和感受，通过市场调研客户数据分析，前瞻性地预测市场变化，并能通过各种手段引导客户需求的实现。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz8">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">关注细节</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>关注事实和细节，而不是抽象的概念；既考虑到全局，又深入了解关键细节，以细节的完美作为重要的努力方向。</p>
+				<p class="des"><em>[行为表现]</em><span>精益求精：</span>学习并督促下属掌握各种可以提升和改进细节的方法，努力做到更好。<span>严谨求实：</span>工作作风严谨务实，有强烈地寻求事实依据的倾向，愿意看到并尊重事实。<span>细节取胜：</span>相信只有可操作的细节作为保障，才能确保整个计划的成功；督促下属对工作各个环节进行多角度、全方位的考虑，确保计划的严密性。</p>
+				<p class="des"><em>[典型行为]</em>1.他不接受缺陷，不传递缺陷，不制造缺陷；能够努力做到精益求精，追求卓越，使工作结果超出预期。（得分：<span class="score"></span>分）<br>2.他在工作中尊重事实，能够严谨务实地对待工作中确实发生的问题。（得分：<span class="score"></span>分）<br>3. 他学习掌握（并且在职权范围内督促下属学习）各种可以提升和改进细节的方法，坚决认真关注细节，做好每一件事。（得分：<span class="score"></span>分）<br>4.遇到问题，他能够深入了解实际情况，进行深度的调研，掌握第一手资料，分析原因，从源头解决问题。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz8">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">分析判断</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对已知的事实进行分析推理，把握事情的本质。</p>
+				<p class="des"><em>[行为表现]</em><span>理解能力：</span>能够根据外界提供的信息，结合自己以往的经验与认知，对事物的性质、内涵、状态等形成清晰的认识。<span>判断能力：</span>能够对事物的是与非、对与错、好与坏、真与假等品质做出恰当的评判和区分。<span>推理能力：</span>对事物经过分析、理解、判断以及综合等逻辑思维过程后，得出结论。<span>决断力：</span>对零散结论性信息进行整合加工，分析利弊，做可行性比较，选择最合适的方案。</p>
+				<p class="des"><em>[典型行为]</em>1.他能从零散的信息中，敏锐地洞察问题的真正原因，或者把握用户的潜在需求、社会、行业以及市场等的新动向、新趋势。（得分：<span class="score"></span>分）<br>2.他能够客观冷静地审视情境，对不同来源、表面上相互矛盾的信息进行进一步发掘和整理，从而判断问题产生的根源，澄清问题的关键，为解决问题提出更好的方法和建议。（得分：<span class="score"></span>分）<br>3. 他倾向于为解决问题准备几套解决方案，并对每一方案的利弊做出合理评估，迅速确定相对较好的解决方案，并准备好备用方案。（得分：<span class="score"></span>分）<br>4.他善于并且乐于从过往的工作和问题中总结经验教训，不断提升自身和团队的问题解决能力，为解决问题总结出新的办法和流程。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz8">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">责任心</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>认识到自己的工作在组织中的重要性，把实现组织的目标当成是自己的目标。</p>
+				<p class="des"><em>[行为表现]</em><span>工作认知：</span>对工作内容、工作权利和职责有清晰而深刻的认识，了解自己所从事的工作对实现组织目标的重要性。<span>成就感：</span>从工作中寻求自身的价值和满足；完成工作能给自己带来巨大的满足感和优越感。<span>乐于奉献：</span>能够在攸关组织和团队整体利益的时刻，为了保障整体目标的实现，不计较甚至牺牲“小我”的利益得失，兢兢业业、任劳任怨地工作。<span>热爱工作：</span>把工作当成是自己的事业来做，愿意把这里作为发展自己的舞台。</p>
+				<p class="des"><em>[典型行为]</em>1.他敢于承担急、难、险、重的任务，敢于在自己职责范内决策并承担责任，不回避不拖延。（得分：<span class="score"></span>分）<br>2.他对在自己的工作岗位上不断钻研学习，精益求精保持创业般的工作热情。（得分：<span class="score"></span>分）<br>3. 他能够从公司利益的角度出发积极的处理公司中出现的突发事件，或者无法明确划分到部门或个人的职责模糊事件。（得分：<span class="score"></span>分）<br>4.即使在有困难，或缺乏监督的情况下仍能够把工作做好。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz8">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">行动力</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>愿意不断学习、思考，养成习惯和动机，进而获得能够产生成功结果的能力。行为的主动性高，具备一定的冒险精神，倾向于在不断尝试、在“做”的过程中学习和提升；对工作的未知因素没有畏难情绪，不怕困难和挫折。</p>
+				<p class="des"><em>[行为表现]</em><span>主动性：</span>主动领受工作任务，积极和上级、同事及下级商讨工作任务中的难点、问题，寻求解决办法与对策。<span>推动力：</span>在面对工作任务时，倾向于立即采取行动，并以自己的行动带动工作的进展。<span>冒险性：</span>更倾向于用“尝试”的方式解决问题，愿意在“做”的过程中发现问题、解决问题；不怕困难和挫折，勇于承担责任和行为后果。<span>自信与坚持：</span>相信自己能将工作做好，有能力解决工作中遇到的困难；具备较坚韧的意志力。</p>
+				<p class="des"><em>[典型行为]</em>1.他的工作总是能够日清日结，而且他对待工作总是行动快速，决策干脆，绝不拖泥带水，推诿拖沓。（得分：<span class="score"></span>分）<br>2.他对于公司领导、同事或下属提出的问题非常重视，能够及时积极地给予反馈。（得分：<span class="score"></span>分）<br>3. 他作为工作的承担者，不仅能及时完成本职工作，而且能够主动推动工作的整体进展。（得分：<span class="score"></span>分）<br>4.接受工作任务时，积极与上下级同事商讨，明确工作中的重点与难点，并寻求最好的方案。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz9">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">客户导向</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>关注内部和外部客户需求和利益，以追求客户满意为组织工作的中心任务。</p>
+				<p class="des"><em>[行为表现]</em><span>关注客户：</span>深刻理解客户利益与组织利益的关系，利用多种渠道不断了解客户感受，预测客户需求，以此作为改进工作的行动指南。<span>追求客户满意：</span>以赢得客户满意为使命，致力于开发符合客户需求的产品，并持续努力为客户提供快捷、周到和便利的服务。<span>发展客户关系：</span>从客户的角度出发，与客户建立并保持稳固、信任的伙伴关系，在客户中树立良好的组织形象与口碑，以提高客户忠诚度。<span>创造客户价值：</span>关心客户的发展和困难，通过向客户提供可能的支持和帮助，实现组织与客户的双赢。</p>
+				<p class="des"><em>[典型行为]</em>1. 他不仅关注外部客户，而且将公司内部合作的同事和服务对象当做内部客户，倡导“下游、下道工序、下个过程、下个环节等是客户”的理念。（得分：<span class="score"></span>分）<br>2. 他致力于满足客户（和公司内部客户）的需求，并持续努力提供快捷、周到和便利的服务。（得分：<span class="score"></span>分）<br>3. 他能够与公司客户或者内部合作的同事建立并保持稳固、信任的伙伴关系，在客户或者同事中树立良好的组织形象与口碑，努力建立起与客户或者同事的长期和友好的合作关系。（得分：<span class="score"></span>分）<br>4.他能够运用先进的工具和方法深入分析研究客户的期望和潜在要求，有针对性的提供优秀产品和服务，提高客户满意度。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz9">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">服务精神</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>专注于如何发现并满足客户的需求，并帮助或服务客户的愿望以满足他们的要求。</p>
+				<p class="des"><em>[行为表现]</em><span>了解客户需求：</span>了解并追踪客户的要求、需求、抱怨。让客户对最新项目进展有所了解。<span>保持沟通：</span>与顾客在彼此的期望方面保持沟通，监督客户满意度的执行。给客户提供有益信息和友善的帮助。<span>亲自负责：</span>对客户服务问题采取亲自负责的态度，及时解决问题，不隐瞒不袒护。<span>为客户采取行动：</span>在客户碰到问题时，主动使自己能随时被顾客找到，并及时采取行动。</p>
+				<p class="des"><em>[典型行为]</em>1.他了解并追踪外部客户或者公司内部客户的要求、需求、抱怨，赢得外部客户和内部客户的信赖和尊重。（得分：<span class="score"></span>分）<br>2.在对内和对外服务方面出现问题时，他能够采取细致负责的态度，及时地、不袒护自己地解决问题。（得分：<span class="score"></span>分）<br>3. 他能够在组织中建立或者优化相关服务规范，提升同事的服务意识，监督客户服务的执行，持续完善和改进服务细节。（得分：<span class="score"></span>分）<br>4.在服务对象遇到问题或者有需要时，主动使自己能随时被顾客找到，及时解决客户需求及相关问题。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz9">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">沟通协调</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>在日常工作中妥善处理好上级、同级、下级等各种关系，使其减少摩擦，能够调动各方面的工作积极性的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>积极沟通：</span>重视且乐于沟通，愿意与人建立联系；在遇到沟通障碍时，能够以积极心态和不懈的努力对待冲突和矛盾，而不是强权或回避。<span>换位思考：</span>能够打破自我中心的思维模式，尝试从对方的角度和立场考虑问题，体察对方感受，促进相互理解。<span>及时反馈：</span>重视信息的分享，用心倾听各方的意见，并根据实际情况及时做出调整和回应。<span>机制保证：</span>能够有意识地在组织中搭建沟通平台，通过机制建设确保沟通渠道的顺畅。</p>
+				<p class="des"><em>[典型行为]</em>1. 他愿与人建立联系，重视信息的分享，用心倾听各方的意见，乐于沟通，遇到沟通阻力时，能够以积极心态和不懈的努力应对。（得分：<span class="score"></span>分）<br>2.他能够换位思考，从对方的角度和立场考虑问题，体察对方感受，促进相互理解。（得分：<span class="score"></span>分）<br>3. 他将沟通以任务形式明确到工作日程表中，建立定期沟通的规则，以便于加强协调，实现无缝合作和协同。（得分：<span class="score"></span>分）<br>4.他能够清晰的阐述观点，使下属明确自己的目标和任务，使下属的工作更满足团队的需要。（得分：<span class="score"></span>分）</p>
+			</div>			
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz9">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">专业化</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对本专业领域的发展动态非常敏感，有较强的领悟力和驾驭力，能做本专业的“专家”。</p>
+				<p class="des"><em>[行为表现]</em><span>技能娴熟：</span>对专业领域内涉及的知识、原理、方法和流程等有良好的领悟力与驾驭能力。<span>专业敏感性：</span>对相关专业领域的趋势、前景和前沿发展等具有敏锐的嗅觉，不断寻找和尝试新技术以保持竞争力。<span>权威感：</span>对自己的专业能力有充分的信心，面对挑战时，相信自己的判断和决定。<span>开放与适应：</span>保持对其他岗位专业技能的开放心态，以确保能够更好地做好团队配合与工作衔接；在转换工作任务时，表现出良好的适应性和快速的学习能力。</p>
+				<p class="des"><em>[典型行为]</em>1.他以专业方面的发展作为自己职业发展的追求目标，不断学习和尝试新技术以保持竞争力。（得分：<span class="score"></span>分）<br>2.他对自己的专业能力有充分的信心，面对挑战和压力时，相信自己的判断和决定，能够给出具有专业价值的建议和指导。（得分：<span class="score"></span>分）<br>3. 他在所在领域内具有相当娴熟的技能和丰富的知识，对专业领域内涉及的知识、原理、方法和流程等有良好的领悟力与驾驭能力。是同事求助和寻求咨询的对象。（得分：<span class="score"></span>分）<br>4.他始终保持对其他岗位专业技能的开放心态，以确保能够更好地做好团队配合与工作衔接；在转换工作任务时，表现出良好的适应性和快速的学习能力。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz10">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">分析判断</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对已知的事实进行分析推理，把握事情的本质。</p>
+				<p class="des"><em>[行为表现]</em><span>理解能力：</span>能够根据外界提供的信息，结合自己以往的经验与认知，对事物的性质、内涵、状态等形成清晰的认识。<span>判断能力：</span>能够对事物的是与非、对与错、好与坏、真与假等品质做出恰当的评判和区分。<span>推理能力：</span>对事物经过分析、理解、判断以及综合等逻辑思维过程后，得出结论。<span>决断力：</span>对零散结论性信息进行整合加工，分析利弊，做可行性比较，选择最合适的方案。</p>
+				<p class="des"><em>[典型行为]</em>1.他能从零散的信息中，敏锐地洞察问题的真正原因，或者把握用户的潜在需求、社会、行业以及市场等的新动向、新趋势。（得分：<span class="score"></span>分）<br>2.他能够客观冷静地审视情境，对不同来源、表面上相互矛盾的信息进行进一步发掘和整理，从而判断问题产生的根源，澄清问题的关键，为解决问题提出更好的方法和建议。（得分：<span class="score"></span>分）<br>3. 他倾向于为解决问题准备几套解决方案，并对每一方案的利弊做出合理评估，迅速确定相对较好的解决方案，并准备好备用方案。（得分：<span class="score"></span>分）<br>4.他善于并且乐于从过往的工作和问题中总结经验教训，不断提升自身和团队的问题解决能力，为解决问题总结出新的办法和流程。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz10">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">责任心</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>认识到自己的工作在组织中的重要性，把实现组织的目标当成是自己的目标。</p>
+				<p class="des"><em>[行为表现]</em><span>工作认知：</span>对工作内容、工作权利和职责有清晰而深刻的认识，了解自己所从事的工作对实现组织目标的重要性。<span>成就感：</span>从工作中寻求自身的价值和满足；完成工作能给自己带来巨大的满足感和优越感。<span>乐于奉献：</span>能够在攸关组织和团队整体利益的时刻，为了保障整体目标的实现，不计较甚至牺牲“小我”的利益得失，兢兢业业、任劳任怨地工作。<span>热爱工作：</span>把工作当成是自己的事业来做，愿意把这里作为发展自己的舞台。</p>
+				<p class="des"><em>[典型行为]</em>1.他敢于承担急、难、险、重的任务，敢于在自己职责范内决策并承担责任，不回避不拖延。（得分：<span class="score"></span>分）<br>2.他对在自己的工作岗位上不断钻研学习，精益求精保持创业般的工作热情。（得分：<span class="score"></span>分）<br>3. 他能够从公司利益的角度出发积极的处理公司中出现的突发事件，或者无法明确划分到部门或个人的职责模糊事件。（得分：<span class="score"></span>分）<br>4.即使在有困难，或缺乏监督的情况下仍能够把工作做好。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz10">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">条理性</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>重视规则和秩序；对工作中的各项事务按照紧迫性、重要性区分优先等级，进而有计划、有步骤地安排工作进程，确保工作有条不紊地进行。</p>
+				<p class="des"><em>[行为表现]</em><span>工作认知：</span>了解其工作对实现组织目标的重要性，清晰地知道自己的角色和职责。<span>统筹能力：</span>根据事务的重要性和紧迫程度，对人力、物力以及时间等资源进行相应的规划与安排，确保在规定的时限内按质、按量地完成工作事务。<span>计划性：</span>详细周到地考虑工作计划——确定实现工作目标的具体手段和方法，预定出目标的进程及步骤。<span>自我控制：</span>对目标保持良好的坚持性，不因额外因素的干扰而经常改变工作计划，从而确保自己的工作行为与工作目标实现的方向一致。</p>
+				<p class="des"><em>[典型行为]</em>1.他总是详细周到地安排工作计划，设计和制定工作流程、细化步骤、落实细节，将目标转化成可执行的具体方案。（得分：<span class="score"></span>分）<br>2.他在计划中留有余地，因此很少会被额外因素干扰而经常改变工作计划。在工作中他经常检查，确保自己的工作行为与工作目标实现的方向一致。（得分：<span class="score"></span>分）<br>3.他能够在很短时间内，判断完成某项任务所需投入的时间和各种资源，并根据事务的重要性和紧迫程度进行妥善的统筹安排，以确保工作成果。（得分：<span class="score"></span>分）<br>4.对计划执行过程进行跟踪，对计划的推进节奏进行控制，对暴露的问题及时处理，并根据具体情况对计划做出相应调整。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz10">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">执行</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>为确保战略计划的达成，通过采用创新性的、严格规范的管理行为，高效率地实施计划、取得成果的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>组织理解力：</span>对组织战略、组织结构等有深刻的认识，能够很快把握事情的关键。<span>可操作性：</span>重视可操作性，具备将笼统的甚至模糊的意向性目标，转化成具体可操作的方案计划的能力。<span>组织与推进：</span>高效组织各类资源，对工作进行分工；善于预见障碍并制定和实施克服障碍的计划；善于运用数据等有力事实鼓动员工的工作热情，将工作朝前推进。<span>工作成效：</span>合理安排时间与资源，确保在规定时限内以较低投入高质量地完成任务。<span>跟进落实：</span>在计划实施过程中，进行适当监控和指导；对责任做具体落实；对方案计划的执行效果进行跟踪、反馈和改进。</p>
+				<p class="des"><em>[典型行为]</em>1. 他对保长客的目标、公司的人员和关系结构有深刻的认识，遇到问题或者承担工作时，能够快速定位解决问题或者推进工作的关键所在。（得分：<span class="score"></span>分）<br>2. 他重视计划和规划的可操作性，具备将笼统的甚至模糊的意向性目标，转化成具体可操作的方案计划的能力。（得分：<span class="score"></span>分）<br>3. 他善于组织各类资源，对工作进行分工或者分配；善于预见障碍并制定和实施克服障碍的计划；善于运用数据等有力事实获取领导或者同事的支持，不断将工作朝前推进。（得分：<span class="score"></span>分）<br>4.他在计划实施过程中，会对进程进行适当监控和指导；对责任做具体的分配和落实；对方案计划的执行效果进行跟踪、反馈和改进。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz11">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（2）专业素质：</p>
+			<div class="tables">
+				<p class="title">分析判断</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对已知的事实进行分析推理，把握事情的本质。</p>
+				<p class="des"><em>[行为表现]</em><span>理解能力：</span>能够根据外界提供的信息，结合自己以往的经验与认知，对事物的性质、内涵、状态等形成清晰的认识。<span>判断能力：</span>能够对事物的是与非、对与错、好与坏、真与假等品质做出恰当的评判和区分。<span>推理能力：</span>对事物经过分析、理解、判断以及综合等逻辑思维过程后，得出结论。<span>决断力：</span>对零散结论性信息进行整合加工，分析利弊，做可行性比较，选择最合适的方案。</p>
+				<p class="des"><em>[典型行为]</em>1.他能从零散的信息中，敏锐地洞察问题的真正原因，或者把握用户的潜在需求、社会、行业以及市场等的新动向、新趋势。（得分：<span class="score"></span>分）<br>2.他能够客观冷静地审视情境，对不同来源、表面上相互矛盾的信息进行进一步发掘和整理，从而判断问题产生的根源，澄清问题的关键，为解决问题提出更好的方法和建议。（得分：<span class="score"></span>分）<br>3. 他倾向于为解决问题准备几套解决方案，并对每一方案的利弊做出合理评估，迅速确定相对较好的解决方案，并准备好备用方案。（得分：<span class="score"></span>分）<br>4.他善于并且乐于从过往的工作和问题中总结经验教训，不断提升自身和团队的问题解决能力，为解决问题总结出新的办法和流程。（得分：<span class="score"></span>）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz11">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">沟通协调</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>在日常工作中妥善处理好上级、同级、下级等各种关系，使其减少摩擦，能够调动各方面的工作积极性的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>积极沟通：</span>重视且乐于沟通，愿意与人建立联系；在遇到沟通障碍时，能够以积极心态和不懈的努力对待冲突和矛盾，而不是强权或回避。<span>换位思考：</span>能够打破自我中心的思维模式，尝试从对方的角度和立场考虑问题，体察对方感受，促进相互理解。<span>及时反馈：</span>重视信息的分享，用心倾听各方的意见，并根据实际情况及时做出调整和回应。<span>机制保证：</span>能够有意识地在组织中搭建沟通平台，通过机制建设确保沟通渠道的顺畅。</p>
+				<p class="des"><em>[典型行为]</em>1. 他愿与人建立联系，重视信息的分享，用心倾听各方的意见，乐于沟通，遇到沟通阻力时，能够以积极心态和不懈的努力应对。（得分：<span class="score"></span>分）<br>2.他能够换位思考，从对方的角度和立场考虑问题，体察对方感受，促进相互理解。（得分：<span class="score"></span>分）<br>3. 他将沟通以任务形式明确到工作日程表中，建立定期沟通的规则，以便于加强协调，实现无缝合作和协同。（得分：<span class="score"></span>分）<br>4.他能够清晰的阐述观点，使下属明确自己的目标和任务，使下属的工作更满足团队的需要。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz11">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">影响能力</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>为了使他人赞成或支持自己，用一种为别人所乐于接受的方式，改变他人所乐于接受的方式，改变他人的思想和行动的能力，希望他人采用的一系列行动。影响力与人际理解力、服务经神等素质的核心区别在于，影响力是为推动他人达成个人所期望的目标而服务；而人际理解力与服务精神更多是为帮助达成他人的目标而采取行动。</p>
+				<p class="des"><em>[行为表现]</em><span>陈述意图：</span>打算达到具体效果或影响，表示对名誉、地位、外貌等的关切；<span>采取行动：</span>运用具体例子，根据影响对象的不同，采取不同的影响方案。<span>运用非直接影响：</span>运用非直接影响的因果链：“由A到B，再由B告诉C等等”。或采用两个步骤去影响，每一步骤适应不同的听众。运用专家或第三方施加影响。<span>运用复杂的影响策略：</span>有政治上的同盟，为某种观点建立“幕后”支持，为了取得某种效果提供或保留某些信息，运用“群策技巧”去引导或指导一群人。</p>
+				<p class="des"><em>[典型行为]</em>1.他能根据影响对象的不同，运用具体实例或实际行动来影响对方，以达成期望目标。（得分：<span class="score"></span>分）<br>2.他能够敏锐地感知别人的情绪和需求，善于预测别人的反应，并站在对方的角度思考问题，做好沟通。（得分：<span class="score"></span>分）<br>3.他善于适时使用一些非直接或者间接的手段来传递信息，有策略地向对象施加影响力。 （得分：<span class="score"></span>分）<br>4.在复杂的压力下，能够迅速抓住关键，分析利害关系化解危机，使形势向有利于自己的方面发展。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page zysz zysz11">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">执行</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>为确保战略计划的达成，通过采用创新性的、严格规范的管理行为，高效率地实施计划、取得成果的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>组织理解力：</span>对组织战略、组织结构等有深刻的认识，能够很快把握事情的关键。<span>可操作性：</span>重视可操作性，具备将笼统的甚至模糊的意向性目标，转化成具体可操作的方案计划的能力。<span>组织与推进：</span>高效组织各类资源，对工作进行分工；善于预见障碍并制定和实施克服障碍的计划；善于运用数据等有力事实鼓动员工的工作热情，将工作朝前推进。<span>工作成效：</span>合理安排时间与资源，确保在规定时限内以较低投入高质量地完成任务。<span>跟进落实：</span>在计划实施过程中，进行适当监控和指导；对责任做具体落实；对方案计划的执行效果进行跟踪、反馈和改进。</p>
+				<p class="des"><em>[典型行为]</em>1. 他对保长客的目标、公司的人员和关系结构有深刻的认识，遇到问题或者承担工作时，能够快速定位解决问题或者推进工作的关键所在。（得分：<span class="score"></span>分）<br>2. 他重视计划和规划的可操作性，具备将笼统的甚至模糊的意向性目标，转化成具体可操作的方案计划的能力。（得分：<span class="score"></span>分）<br>3. 他善于组织各类资源，对工作进行分工或者分配；善于预见障碍并制定和实施克服障碍的计划；善于运用数据等有力事实获取领导或者同事的支持，不断将工作朝前推进。（得分：<span class="score"></span>分）<br>4.他在计划实施过程中，会对进程进行适当监控和指导；对责任做具体的分配和落实；对方案计划的执行效果进行跟踪、反馈和改进。（得分：<span class="score"></span>分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<!-- 专业素质 产品策划序列 结束-->
+	{{if position == "FirstLineManager"}}
+	<!-- 基层管理 管理素质 开始-->
+	<div class="page glsz glsz1">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（3）管理素质：</p>
+			<div class="tables">
+				<p class="title">指导与监控</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对下属的工作提供指导与支持，促使其能力提升；对布置给下属的工作进行跟踪，要求其及时反馈，并根据情况做出相应对策的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>业务支持：</span>精通有关业务；能够根据工作进展、对可能出现情况的预测和计划执行过程中，向下属或下级相关单位提供必要的知识技能培训、专业咨询和后台支持，解除疑惑，从而促进工作顺利推进。<span>跟踪与反馈：</span>在任务执行过程中，注意对工作进程的跟踪，能够利用各种手段，及时获得反馈，迅速调整方案和策略。<span>分享与提升：</span>重视经验的总结和分享，并以此促进本部门及相关单位工作能力的提升和流程优化。</p>
+				<p class="des"><em>[典型行为]</em>1.他在布置工作时，能够清晰地让下属了解自己的任务目标、权限和时间限制，促使下属周密规划，以确保任务完成。（得分：{{zhidaoyujiankonga}}分）<br>2.他鼓励下属成长和进步，经常作正面的肯定；容忍失败，给予下属学习实践的时间。他重视经验的总结和分享，运用结对子、师带徒、传帮带、沙龙等多种方式，将自己的经验和专业知识传授给团队，必要时，提供详细的指导或如何做的演示。（得分：{{zhidaoyujiankongb}}分）<br>3. 他对布置给下属的工作要求其及时反馈，在任务执行过程中，注意对工作进程的跟踪，能够利用各种手段，及时获得反馈，迅速调整方案和策略，并根据情况做出相应指导（得分：{{zhidaoyujiankongc}}分）<br>4.他重视经验的总结和分享，并以此促进团队或者组织的工作能力的提升和流程优化。他对下属的特点、优势、特长以及成熟度有比较深入的了解，能够根据下属特点，定制个性化的教练方案，激发员工自行寻求解决方法和对策。（得分：{{zhidaoyujiankongd}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>	
+	<div class="page glsz glsz1">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">激励</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>激发、引导和维持他人的工作热情，保证预定目标的实现。</p>
+				<p class="des"><em>[行为表现]</em><span>激励意识：</span>了解激励与提高员工的工作积极性、改进工作效率之间的关系，能够将“保护和激发员工的工作热情”作为组织管理的重要目标。<span>尊重与认可：</span>能够以各种形式认可员工的工作，使他们能够体验到价值感和成就感。<span>鼓励参与：</span>通过职责赋予、制度保证等方法手段，使员工切实参与到组织发展中来，从而获得强烈的参与感、成就感和主人翁感。<span>提升与发展：</span>努力为员工创造更多发展机会和更大发展空间，并对自己和组织的可预见的未来充满信心。<span>公平报偿：</span>不断推动绩效考核和奖酬福利体系的优化进程；以薪酬、职位、赞誉等形式，对员工做出合理的、有竞争力的报偿。<span>个性化激励：</span>能够识别不同部门和员工的激励需求，有针对性地采取个性化激励措施。</p>
+				<p class="des"><em>[典型行为]</em>1.他能够向周围的人清晰的传达公司或者部门的发展愿景和规划，并且帮助下属将目标转化为可衡量的个人业绩指标（得分：{{jilia}}分）<br>2.他注重营造畅通的沟通环境，下属可以通过正式或者非正式的渠道与他进行沟通，顺利表达自己的想法、意见和建议。（得分：{{jilib}}分）<br>3. 他能够以各种形式认可员工的工作，及时表扬做出突出业绩的员工，针对性地采取个性化激励措施，使他们能够体验到价值感和成就感。（得分：{{jilic}}分）<br>4.他能够通过职责赋予、制度保证等方法手段，使员工切实参与到组织发展中来。（得分：{{jilid}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>	
+	<!-- 基层管理 管理素质 结束 -->	
+	{{/if}}
+	{{if position == "MiddleManager"}}
+	<!-- 中层管理 管理素质 开始-->
+	<div class="page glsz glsz2">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title3" style="margin-left:-7px">（3）管理素质：</p>
+			<div class="tables">
+				<p class="title">培养他人</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>指自发的、真诚的去帮助他人提高工作上的知识技能、工作方法和能力素质等。有培养他人的意愿与倾向，关注他们的潜能与可塑性，并在实际工作中帮助其成长。</p>
+				<p class="des"><em>[行为表现]</em><span>鼓励成长：</span>鼓励下属成长和进步，经常作正面的肯定；容忍失败，给予下属学习实践的时间；能够把下属的成功看成是自己的成功而不是威胁。<span>经验传授：</span>不保守不封闭，愿意与他人分享成败的经验。必要时，提供详细的指导或如何做的演示，告诉别人如何完成任务，提出具体、有益的建议。<span>积极引导：</span>向下属表达积极的期待，告诉他们你希望并相信他们可以达成更高的目标。<span>拓展空间：</span>重视培训和职业发展通道的设计，为员工实践所学创造更多机会，使得员工有更大的成长空间。<span>建议与反馈：</span>根据他人特点，给予必要的指导和建设性意见，积极提供反馈，帮助他们更快成长。</p>
+				<p class="des"><em>[典型行为]</em>1.他鼓励下属成长和进步，经常作正面的肯定；容忍失败，给予下属学习实践的时间；能够把下属的成功看成是自己的成功而不是威胁，向下属表达积极的期待，告诉他们自己希望并相信他们可以达成更高的目标。（得分：{{peiyangtarena}}分）<br>2.他关注培训，能够支持公司培训工作的开展，积极参与培训体系构建、课程搭建的工作，或者作为内部讲师亲自授课，向员工传授自身的知识、技能和经验。他能够根据企业战略的需要，有效整合内外部资源，推动建立科学合理的培训体系。（得分：{{peiyangtarenb}}分）<br>3. 他重视培训和员工的职业发展，设计相应的通道，或者作出妥善的安排，为员工实践所学创造更多机会，使得员工有更大的成长空间。（得分：{{peiyangtarenc}}分）<br>4.他不保守不封闭，愿意与别人分享成败的经验。必要时，提供详细的指导或如何做的演示，告诉别人如何完成任务，提出具体、有益的建议。（得分：{{peiyangtarend}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>	
+	<div class="page glsz glsz2">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">沟通协调</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>在日常工作中妥善处理好上级、同级、下级等各种关系，使其减少摩擦，能够调动各方面的工作积极性的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>积极沟通：</span>重视且乐于沟通，愿意与人建立联系；在遇到沟通障碍时，能够以积极心态和不懈的努力对待冲突和矛盾，而不是强权或回避。<span>换位思考：</span>能够打破自我中心的思维模式，尝试从对方的角度和立场考虑问题，体察对方感受，促进相互理解。<span>及时反馈：</span>重视信息的分享，用心倾听各方的意见，并根据实际情况及时做出调整和回应。<span>机制保证：</span>能够有意识地在组织中搭建沟通平台，通过机制建设确保沟通渠道的顺畅。</p>
+				<p class="des"><em>[典型行为]</em>1. 他愿与人建立联系，重视信息的分享，用心倾听各方的意见，乐于沟通，遇到沟通阻力时，能够以积极心态和不懈的努力应对。（得分：{{goutongxietiaoa}}分）<br>2.他能够换位思考，从对方的角度和立场考虑问题，体察对方感受，促进相互理解。（得分：{{goutongxietiaob}}分）<br>3. 他将沟通以任务形式明确到工作日程表中，建立定期沟通的规则，以便于加强协调，实现无缝合作和协同。（得分：{{goutongxietiaoc}}分）<br>4.他能够清晰的阐述观点，使下属明确自己的目标和任务，使下属的工作更满足团队的需要。（得分：{{goutongxietiaod}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>	
+	<div class="page glsz glsz2">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables"  style="padding: 10px 15px;">
+				<p class="title">制度构建与优化</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>根据组织的战略规划和业务构成，搭建和优化符合组织实际的、系统化的管理与运作制度体系。能够分析和洞察组织内部管理制度中的缺口和薄弱环节，并有针对性地通过制度的建设、补充，不断优化组织管理制度体系，提升和强化行政管理效力。</p>
+				<p class="des"><em>[行为表现]</em><span>制度知识：</span>对标杆组织的管理制度有广泛的了解，探究各种管理制度的原理、作用及其优劣。<span>组织分析：</span>密切关注组织内外部各种因素对组织运作的影响，及时了解与掌握组织管理运作制度的缺口和不尽人意的地方。在制定和修订制度时，能够将各种管理与运作制度进行有机整合，保证制度体系的完整性、系统性和一致性。<span>制度完善：</span>根据执行情况对制度进行客观的评估，对有缺陷或因工作任务的变化而需要改进的制度，及时进行修改、补充或重建，保持行政管理工作正常、高效地开展。</p>
+				<p class="des"><em>[典型行为]</em>1.他对标杆组织的管理制度有广泛的了解，能够准确表达出国内外先进企业在流程、制度、管理体系等方面的做法，总结出公司在标准化体系建设方面实践经验和教训，探究各种管理制度的原理、作用及其优劣，提出改善当前部门运行机制的建议。（得分：{{zhidugoujianyouhuaa}}分）<br>2.他致力于将标准化的体系流程系统有序地推广应用到相关业务领域中；他定期总结和评估标准化系统使用情况和效果，搜集反馈的意见，在此基础提出优化体系的要求和建议。（得分：{{zhidugoujianyouhuab}}分）<br>3. 在制定和修订制度时，他能够从全局出发，考虑公司各个系统和各环节中的复杂关系，对制度进行有机整合，保证制度体系的完整性、系统性和一致性。（得分：{{zhidugoujianyouhuac}}分）<br>4.他针对新的管理标准开展培训，并跟踪标准的实施情况，在充分验证、反复审核、优化的基础上固化最终形成与实践结合的流程化、可视化的体系。（得分：{{zhidugoujianyouhuad}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>	
+	<div class="page glsz glsz2">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">全局观念</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>指一切从系统整体及其全过程出发的思想和准则，是调节系统内部个人和组织、组织和组织、上级和下级、局部和整体之间关系的行为规范。指从组织整体和长期的角度，进行考虑决策、开展工作，保证组织健康发展。</p>
+				<p class="des"><em>[行为表现]</em><span>认清局势：</span>深刻理解组织的战略目标，组织中局部与整体、长期利益与短期利益的关系，以及其他各关键因素在实现组织战略中的作用。<span>尊重规则：</span>有较强的法律、制度意识，尊重组织运作中的各种规则，不会为局部小利而轻易打破规则和已经建立的平衡与秩序。<span>团结协作：</span>倡导部门间相互支援、默契配合，共同完成组织战略目标。<span>甘于奉献：</span>明确局部与整体的关系，在决策时能够通盘考虑；以组织发展大局为重，在必要时能够勇于牺牲局部“小我”和暂时利益，为组织战略实现和长远发展的大局让路。</p>
+				<p class="des"><em>[典型行为]</em>1.他思考问题做事情从来不以本人、自己负责的处室或者部门为中心出发，而能站在更高的层面，从保长客或者部门全局的角度思考，从而对自己的角色与任务进行负责任的定位。（得分：{{quanjuguanniana}}分）<br>2.他能够从全局考虑个人、团队以及组织之间的协同关系，并能把个人与部门、个人与公司、部门之间和及上下级之间等的利益诉求尽可能协同。（得分：{{quanjuguannianb}}分）<br>3. 他重视组织协同的价值，并能够一方面承担好自己的角色，起到自己应有的功能与作用，另一方面推动其他责任相关个体与组织，服务好整体目标。（得分：{{quanjuguannianc}}分）<br>4.他能够保持开放的心态，欣赏、信任、支持别人工作，与团队成员配合很好，能在自己的权责范围内承担起责任。总体目标和整体利益，坚持局部服从和服务于整体，积极配合全局开展工作。（得分：{{quanjuguanniand}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>	
+	{{/if}}
+	<!-- 中层管理 管理素质 结束 -->
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title1">第三部分：基础能力分析 </p>
+			<p class="style2">基础能力是一个人理解、逻辑等基本素质的集合。对于职业人而言，这些能力非常稳定，较难以改变，或者需要较长时间才会改变。在基础能力上，每个人都有优势和不足。作为一个成熟的工作者，通过加深自我认知，了解自己的优势和不足，可以发展出适合自己的一系列工作方法来扬长避短。</p>
+			<p class="title2">3.1 基础能力评估结果：</p>
+			<p class="style3">图表4：基础能力评估结果</p>
+			<table class="table4">
+				<tr>
+					<td>基础能力*</td>
+					<td>
+						<p class="til">考评内容</p>	
+						<div class="table-items">
+							<span>言语理解</span>
+							<span>逻辑推理</span><br>
+							<span>图形推理</span>
+							<span>数理逻辑</span><br>
+							<span>信息分析</span>
+						</div>						
+					</td>
+					<td>
+						<p class="til">得分</p>	
+						<div>{{abilityScore || "NA"}}</div>
+					</td>
+					<td>
+						<p class="til">序列内排名</p>	
+						<div id="radialIndicators1" _score="{{abilityRanking}}" class="radialIndicators"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>认知特征**</td>
+					<td>
+						<p class="til">考评内容</p>	
+						<div class="table-items">
+							<span>—</span>
+						</div>						
+					</td>
+					<td>
+						<p class="til">得分</p>	
+						<div>{{cognitionScore || "NA"}}</div>
+					</td>
+					<td>
+						<p class="til">序列内排名</p>	
+						<div id="radialIndicators2" _score="{{cognitionRanking}}" class="radialIndicators"></div>
+					</td>
+				</tr>
+			</table>
+			<p class="style4">注：*与智商相关的基础能力，部分预测长期绩效和发展，各项目之间有联系，需要整体看待；<br>**深层次的认知能力和特征，部分预测长期绩效和发展，各项目详细解释参见《认知特征报告》</p>
+			<p class="title1" style="margin-top:30px;margin-bottom:0;">第四部分：基本条件梳理 </p>
+			<p class="style3" style="margin-top:10px;">图表5：基本条件梳理表</p>
+			<table class="table51">
+				<tr>
+					<td>
+						<div class="icon1"></div>
+						<div>学历</div>
+						<p class="blue">{{education}}</p>
+					</td>
+					<td>
+						<div class="icon2"></div>
+						<div>工作年限</div>
+						<p class="blue">{{workYears}}年</p>
+					</td>
+					<td>
+						<div class="icon2"></div>
+						<div>行业经验</div>
+						<p class="blue">{{industryYears}}年</p>
+					</td>
+					<td>
+						<div class="icon2"></div>
+						<div>专业经验</div>
+						<p class="blue">{{professionalYears}}年</p>
+					</td>
+					<td>
+						<div class="icon2"></div>
+						<div>管理经验</div>
+						<p class="blue">{{managementYears}}年</p>
+					</td>
+				</tr>
+			</table>
+			<table class="table52">
+				<tr>
+					<td>
+						<p class="til">基础条件部门内排名</p>	
+						<!-- <div>{{conditionRanking}}</div> -->
+						<div id="radialIndicators3" _score="{{conditionRanking}}" class="radialIndicators"></div>
+					</td>
+					<!-- <td>
+						<p class="til">处室内排名</p>	 
+						<div>85</div>
+					</td>
+					<td>
+						<p class="til">基础条件处室内排名</p>
+						<div>85</div>		
+					</td> -->
+				</tr>
+			</table>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：基础能力分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+</script>	
+<script type="text/template" id="template2">
+	<div class="page page-cover page-cover2">
+		<div class="cover-img"></div>	
+		<div class="cover-msg">
+			<p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 名： <em class="pname">{{name}}</em></p>
+			<p>员工编号： {{identifier}}</p>
+			<p>当前部门： {{department}}</p>
+			<p>当前处室： {{office}}</p>
+			<p>报告日期： 2017年10月30日</p>
+		</div>
+		<div class="logo"></div>
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="center-title">报告阅读须知</div>
+			<p class="style1">1. 本次针对后备干部以发展为导向的胜任力评估，主要目标是希望对后备干部下一步从事管理工作的潜质进评价，帮助后备干部从管理学的角度加深自我认知、牵引个人发展。</p>
+			<p class="style1">2. 本报告着重对被评估者的整体能力倾向和未来从事管理工作相关的素质潜质进行评估。</p>
+			<p class="style1">3. 本报告的有效期为1年，将本报告用作决策参考时，须慎重考虑时效性；本报告是基于被评估者当前的职位做出。如果被评估者的职位发生变化，需要慎重考虑本报告的适用性。</p>
+			<p class="style1">4. 本报告为保密文件，需与其它常规人事文档分开保管，严格控制本报告的传阅。</p>
+		</div>	
+		<div class="footer">
+			<span class="h-title">报告阅读须知</span>
+			<span class="h-num"></span>
+		</div>
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="center-title">报告内容说明</div>
+			<p class="style1">1. 潜质：是由基础能力测试（笔试+加法作业法在线测试）40%+360度胜任测评40%+基本条件梳理（经验、教育经历）20%得分共同计算得出的结果，分为三个等级。</p>
+			<p class="style1">2. 业绩回溯：由了解员工业绩的管理者，根据相对长期的整体印象对员工的业绩水平进行评价。为了保证业绩回溯的公平性，个人业绩受到部门整体业绩和处室整体业绩的影响。即整体业绩更加优秀的部门和处室，个人业绩评优的空间更大。业绩回溯的结果分为A-E五个等级。</p>
+			<p class="style1">3. 潜能绩效综合评估，根据潜能和绩效结果，将员工分为六个区间：</p>
+			<div class="section-table"></div>
+			<div class="pic1"></div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">报告内容说明</span>
+			<span class="h-num"></span>
+		</div>	
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="pic2"></div>
+			<p class="style1" style="margin-top:70px;">4. 素质评估：雷达图显示各项胜任力素质的情况。通用素质的参考线是全公司平均分，管理素质的参考线是相应管理层平均分，专业素质的参考线是该专业平均分。</p>
+		</div>	
+		<div class="footer">
+			<span class="h-title">报告内容说明</span>
+			<span class="h-num"></span>
+		</div>		
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title1">第一部分：当前岗位潜能和绩效综合评定</p>
+			<p class="style2">一般而言，后备管理者的入选标准首先是在当前的职位能够做出优秀的表现。具体而言，考评结果应处于1、2两类区间内。 本次评估采集的数据包括：通过360度评估考评被评估者的胜任力素质；通过纸质问卷和在线工具测评被评估者的基础能力；收集了工作经历和学历信息。综合上述各项结果，得到了被测者在岗位上做出优秀绩效的潜质。结合被评估者的业绩回溯结果，首先对被评估者在当前职位的潜能和绩效的综合情况综合情进行定位和评估。成绩计算方法参见附件《考评成绩计算说明》。</p>
+			<p class="style2">图表1：潜能绩效综合评定：</p>
+			<div class="section-table"></div>
+			<p class="title2" style="margin-top:60px;">1.1 综合评定</p>
+			<p class="style3">
+				<em class="pname">{{name}}</em>在本次评估中，业绩回溯等级为<em>{{performanceLevel || "NA"}}</em> ，潜质得分等级为<em>{{potentialLevel || "NA"}}</em>。<em class="pname" style="color:#000;border:0">{{name}}</em>的测评结果处于<em>{{interval}}号区间</em>,这表明{{intervaldes}}
+			</p>
+			<p class="style3">图表2：潜能绩效综合评定得分：</p>
+			<table class="table1" style="">
+				<thead>
+					<tr>
+						<td></td>
+						<td>等级</td>
+						<td>得分*</td>
+						<td>序列内排名</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="background: #b6b6b6">潜质</td>
+						<td>{{potentialLevel || "NA"}}</td>
+						<td>{{potentialScore || "NA"}}</td>
+						<td>{{potentialReserveRanking || "NA"}}</td>
+					<!-- 	<td>74%</td> -->
+					</tr>
+					<tr>
+						<td style="background: #a0a0a0">业绩回溯</td>
+						<td>{{performanceLevel || "NA"}}</td>
+						<td>—</td>
+						<td>—</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第一部分：当前岗位潜能和绩效综合评定 </span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title1">第二部分：后备干部素质倾向潜质分析</p>
+			<p class="title2">2.1 素质倾向潜质整体结果：</p>
+			<p class="style3">针对后备干部，本次评在“为人——处事“和”思考——行动”两个维度上对被评估者的各项素质表现进行了评估。帮助管理层和被评估者了解自身在胜任力方面的优势和倾向。</p>
+			<p class="style3">图表3：素质倾向结果：</p>
+			<div class="echarts4" id="echarts4">
+				
+			</div>		
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：后备干部素质倾向潜质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<table class="table2">
+				<thead>
+					<tr>
+						<td>素质倾向</td>
+						<td>得分</td>
+						<td>优势项目*</td>
+						<td>待发展项目**</td>	
+					</tr>
+				</thead>
+				<tbody>
+					<tr _tag="hongguansiwei">
+						<td>宏观思维</td>
+						<td>{{hongguansiwei}}</td>
+						<td {{if hongguansiweiyoushibiaoji > 0}} class="tdyoushi tag" {{/if}}></td>
+						<td {{if hongguansiweidaifazhanbiaoji > 0}} class="tdfazhan tag" {{/if}}></td>
+					</tr>
+					<tr _tag="xinxifenxi">
+						<td>信息分析</td>
+						<td>{{xinxifenxi}}</td>
+						<td {{if xinxifenxiyoushibiaoji > 0}} class="tdyoushi tag" {{/if}}></td>
+						<td {{if xinxifenxidaifazhanbiaoji > 0}} class="tdfazhan tag" {{/if}}></td>
+					</tr>
+					<tr _tag="caozuojingyan">
+						<td>操作经验</td>
+						<td>{{caozuojingyan}}</td>
+						<td {{if caozuojingyanyoushibiaoji > 0}} class="tdyoushi tag" {{/if}}></td>
+						<td {{if caozuojingyandaifazhanbiaoji > 0}} class="tdfazhan tag" {{/if}}></td>
+					</tr>
+					<tr _tag="zhixingjihua">
+						<td>执行计划</td>
+						<td>{{zhixingjihua}}</td>
+						<td {{if zhixingjihuayoushibiaoji>0}} class="tdyoushi tag" {{/if}}></td>
+						<td {{if zhixingjihuadaifazhanbiaoji>0}} class="tdfazhan tag" {{/if}}></td>
+					</tr>
+					<tr style="background:#fff" _tag="tuidongtaren">
+						<td>推动他人</td>
+						<td>{{tuidongtaren}}</td>
+						<td {{if tuidongtarenyoushibiaoji>0}} class="tdyoushi tag" {{/if}}></td>
+						<td {{if tuidongtarendaifazhanbiaoji>0}} class="tdfazhan tag" {{/if}}></td>
+					</tr>
+					<tr style="background:#fff" _tag="renjijiaowang">
+						<td>人际交往</td>
+						<td>{{renjijiaowang}}</td>
+						<td {{if renjijiaowangyoushibiaoji>0}} class="tdyoushi tag" {{/if}}></td>
+						<td {{if renjijiaowangdaifazhanbiaoji>0}} class="tdfazhan tag" {{/if}}></td>
+					</tr>
+					<tr style="background:#fff" _tag="renjilijie">
+						<td>人际理解</td>
+						<td>{{renjilijie}}</td>
+						<td {{if renjilijieyoushibiaoji>0}} class="tdyoushi tag" {{/if}}></td>
+						<td {{if renjilijiedaifazhanbiaoji>0}} class="tdfazhan tag" {{/if}}></td>
+					</tr>
+					<tr style="background:#fff" _tag="zhidaotaren">
+						<td>指导他人</td>
+						<td>{{zhidaotaren}}</td>
+						<td {{if zhidaotarenyoushibiaoji>0}} class="tdyoushi tag" {{/if}}></td>
+						<td {{if zhidaotarendaifazhanbiaoji>0}} class="tdfazhan tag" {{/if}}></td>
+					</tr>
+					<tr class="paiming">  
+			            <td colspan="2">总体得分</td> 
+			            <td colspan="3">{{shengrenliScore}}</td>  
+			        </tr> 
+			        <tr class="paiming">  
+			            <td colspan="2">排名</td> 
+			            <td colspan="3">{{shengrenliRanking || "NA"}}</td>  
+			        </tr> 
+				</tbody>
+			</table>
+			<p class="style4" style="margin-top:30px;">注：*得分显著超过平均分（1.5个标准差）。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**得分显著低于平均分（1.5个标准差）。</p>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：后备干部素质倾向潜质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title2">2.2 <span class="pname">{{name}}</span>的素质倾向分析：</p>
+			<p class="style3">素质倾向是一个人先天倾向和后天工作中习得的技能和工作习惯的综合体现。当一个人从事与他素质倾向比较一致的工作时，更容易做出较高绩效，成长较快，工作满意度和幸福感也较高。需要注意的是，当一个人从事与自己素质倾向不符的工作时，不一定做不出满意的绩效，但是这需要付出更多的努力、毅力，发展也相对困难。素质倾向并非不可以改变，成熟职业人和管理者可以通过改变自己的工作方法来改善自己的素质倾向。</p>
+			<p class="title3" style="margin-left:-7px">（1）{{name}}的优势</p>
+			<p class="style3" id="youship"><span class="pname">{{name}}</span>的优势体现在<span id="youshispan"></span></span>。这些优势表现在：</p>
+			<div id="youshidiv">
+			</div>
+			<div class="fanzhanptitlediv" id="fanzhanptitlediv">
+				<p class="title3" style="margin-left:-7px">（2）{{name}}需要发展的素质</p>
+				<p class="style3" id="fazhanp">{{name}}需要发展的项目是<span id="fazhanspan"></span>。这些待发展的素质表现为：</p>
+			</div>
+			<div id="fazhandiv"></div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第二部分：后备干部素质倾向潜质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title1">第三部分：管理相关胜任力素质分析</p>
+			<p class="style3">对于后备管理者而言，虽然没有在保长客担任具体的管理职位，仍然需要通过其日常表现，对其是否具备管理相关的素质和潜质进行评价。</p>
+			<p class="title2">3.1 {{name}}的管理素质评估结果：</p>
+			<p class="style3">图表4：管理素质评估结果：</p>
+			<div class="echarts5" id="echarts5" style="display:none"></div>	
+			<table class="table2" style="margin-top:10px;">
+				<thead>
+					<tr>
+						<td>类型</td>
+						<td>素质</td>
+						<td>得分</td>
+						<td>优势项目*</td>
+						<td>待发展项目**</td>	
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="6" >管理素质</td>
+						<td class="suzhiname">指导与监控</td>
+						<td>{{zhidaoyujiankongyoushi}}</td>
+						<td {{if zhidaoyujiankongyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if zhidaoyujiankongdaifazhanbiaoji>0}} class="suzhitd tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td class="suzhiname">激励</td>
+						<td>{{jili}}</td>
+						<td {{if jiliyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if jilidaifazhanbiaoji>0}} class="suzhitd tag" {{/if}}></td>
+					</tr>	
+					<tr>
+						<td class="suzhiname">培养他人</td>
+						<td>{{peiyangtaren}}</td>
+						<td {{if peiyangtarenyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if peiyangtarenfazhanbiaoji>0}} class="suzhitd tag" {{/if}}></td>
+					</tr>
+					<tr>
+						<td class="suzhiname">沟通协调</td>
+						<td>{{goutongxietiao}}</td>
+						<td {{if goutongxietiaoyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if goutongxietiaodaifazhanbiaoji>0}} class="suzhitd tag" {{/if}}></td>
+					</tr>
+					<tr style="background:#fff">
+						<td class="suzhiname">制度构建与优化</td>
+						<td>{{zhidugoujianyouhua}}</td>
+						<td {{if zhidugoujianyouhuayoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if zhidugoujianyouhuadaifazhanbiaoji>0}} class="suzhitd tag" {{/if}}></td>
+					</tr>	
+					<tr style="background:#fff">
+						<td class="suzhiname">全局概念</td>
+						<td>{{quanjuguannian}}</td>
+						<td {{if quanjuguannianyoushibiaoji>0}} class="tag" {{/if}}></td>
+						<td {{if quanjuguanniandaifazhanbiaoji>0}} class="suzhitd tag" {{/if}}></td>
+					</tr>				
+					<tr class="paiming">  
+			            <td colspan="2">总体得分</td> 
+			            <td colspan="3">{{shengrenliScore}}</td>  
+			        </tr> 
+			        <tr class="paiming">  
+			            <td colspan="2">排名</td> 
+			            <td colspan="3">{{shengrenliRanking || "NA"}}</td>  
+			        </tr> 
+				</tbody>
+			</table>
+			<p class="style4" style="margin-top:30px;">得分显著超过平均分（1.5个标准差）；</p>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title2">3.2 针对{{name}}的管理素质发展建议：</p>
+			<p class="style3" id="suzhifazhanp" style="margin-left:-7px">在管理素质方面，{{name}}需要特别关注<span id="suzhifazhanspan"></span>的提升，具体而言可以采用如下的步骤：</p>
+			<div id="jianyi1">
+				<div class="tables1">
+					<p class="title">指导与监控</p>	
+					<p class="des"><em>[建议管理实践]</em>给与领导跨部门小组等项目制、临时性小组的机会以观察和积累对下属指导和监控的技能;通过内部师徒制度，委任对实习生、新加入员工的引领和代管职责，观察和锻炼督导实习生、新加入员工融入公司顺利开展工作的情况。</p>
+					<p class="des"><em>[推荐阅读书籍]</em>《教导型组织》，作者：侯志奎 著，出版社：机械工业出版社;《未来的领导者》，德鲁克基金会主编，作者：弗朗西斯.赫赛尔本、马歇尔.戈德史密斯、理查德.贝克哈德著，方海萍等译，中国人民大学出版社。</p>
+					<p class="des"><em>[建议参加培训]</em>非人力资源经理的人力资源管理；绩效反馈与辅导。</p>
+				</div>
+				<div class="tables1">
+					<p class="title">激励</p>	
+					<p class="des"><em>[建议管理实践]</em>给与临时项目组、跨部门协调小组的管理机会，观察和锻炼在没有获得官方的行政职权和激励手段（发奖金、评优等）情况下，通过贯彻理念、培养团队精神、个人魅力等方式推进他人的工作和协同；委任公司非正式活动（比如文体活动等）的组织工作，观察和锻炼通过激励和鼓舞推进他人协同开展工作的能力。</p>
+					<p class="des"><em>[推荐阅读书籍]</em>《如何激励员工》，作者：帕特里克·福赛思，东北财经大学出版社 。</p>
+					<p class="des"><em>[建议参加培训]</em>非人力资源经理的人力资源管理；绩效反馈与辅导。</p>
+				</div>
+				<div class="tables1">
+					<p class="title">培养他人</p>	
+					<p class="des"><em>[建议管理实践]</em>担任内部讲师，负责内部培训的某些课程制做和讲授，观察和锻炼将自身经验进行提炼萃取，并向他人进行传递的能力；参与人力资源部人才评估、发展和培训部的相关工作，配合自身板块处室的HRBP开展相关工作，提升人才发展的知识、技能，丰富其人才管理策略；负责部门内部的人力资源规划，和与人力资源部对接整体人力资源规划的工作，锻炼团队评价、构建的相关能力和经验。</p>
+					<p class="des"><em>[推荐阅读书籍]</em>《人力资源管理》，作者：加里·德斯勒，清华大学出版社。</p>
+					<p class="des"><em>[建议参加培训]</em>非人力资源经理的人力资源管理；员工职业生涯发展规划和辅导</p>
+				</div>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>	
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div id="jianyi2">
+				<div class="tables1">
+					<p class="title">沟通协调</p>	
+					<p class="des"><em>[建议管理实践]</em>委任跨部门项目的协调管理工作，锻炼观察在沟通方面的主动性和开放度，以及冲突协调的策略与技巧；委任对政府部门的公关，以及对外部供应商、客户、合作伙伴的关系维护和冲突处理工作。</p>
+					<p class="des"><em>[推荐阅读书籍]</em>《管理大师阿代尔系列/人际沟通》，作者：（英）阿代尔，出版社：海南出版社；《组织中的人际沟通技巧（第二版）--EMBA经典译丛》，作者：时启亮，孙相云 译，出版社：中国人民大学出版社；《卡内基沟通与人际关系》，作者：（美）戴尔·卡内基 著，出版社：中信出版社。</p>
+					<p class="des"><em>[建议参加培训]</em>人际沟通专项培训；客户拓展和公共关系专项培训</p>
+				</div>
+				<div class="tables1">
+					<p class="title">制度构建与优化</p>	
+					<p class="des"><em>[建议管理实践]</em>牵头负责公司某些关键业务或者支持业务的流程的梳理、标准制订、标准优化和执行贯彻检查等工作，观察和锻炼在制度构建和优化方面的能力。</p>
+					<p class="des"><em>[推荐阅读书籍]</em>《埃森哲顾问教你做流程管理》，作者：彼得·弗朗茨 马赛厄斯·柯克莫 出版社：机械工业出版社，出版时间：2008年01月。</p>
+					<p class="des"><em>[建议参加培训]</em>管理体系和标准贯彻培训；流程梳理和相关工具使用培训。</p>
+				</div>
+				<div class="tables1">
+					<p class="title">全局观念</p>	
+					<p class="des"><em>[建议管理实践]</em>委任临时性、更高级的管理权限，比如在更高级的管理者不在岗期间，短时期全面负责相关工作。锻炼和观察站在超越自身管理职责的高度，考虑整体的利益和布局，以及配合和照顾工作上有往来的其它部门工作的能力；通过轮岗和实习临时承担需要同时处理多项工作的岗位。锻炼和观察是否能够合理分配精力和资源，同时照顾到若干个处在不同阶段的工作目标，或者解决若干个不同类型问题的能力；参与公司战略制定和研讨的会议，协助提供决策信息和起草决议，深入了解公司战略发展规划，培养战略能力。</p>
+					<p class="des"><em>[推荐阅读书籍]</em>《思维：国际级企业和企业家战略思维》，作者：郎咸平 等著；《输掉战役赢得战争：驾驭全局的策略》，作者：朱红 主编，出版社：海天出版社</p>
+					<p class="des"><em>[建议参加培训]</em>-</p>
+				</div>
+			</div>	
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>	
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title2">3.3 管理素质详解：</p>
+			<p class="style3">以下是各项管理相关胜任力素质的详细定义和典型行为。作为发展性的评估，素质测评希望能够牵引后备干部表现出公司期待的典型行为。被评估者可以参考自己典型行为的得分对自己日常的行为进行修订，使自己的努力方式和行为方式与公司、部门和岗位的要求更加协同一致。</p>
+			<div class="tables" style="padding: 10px 15px;">
+				<p class="title">指导与监控</p>	
+				<p class="des" style="line-height:35px;"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>对下属的工作提供指导与支持，促使其能力提升；对布置给下属的工作进行跟踪，要求其及时反馈，并根据情况做出相应对策的能力。</p>
+				<p class="des" style="line-height:35px;"><em>[行为表现]</em><span>业务支持：</span>精通有关业务；能够根据工作进展、对可能出现情况的预测和计划执行过程中，向下属或下级相关单位提供必要的知识技能培训、专业咨询和后台支持，解除疑惑，从而促进工作顺利推进。<span>跟踪与反馈：</span>在任务执行过程中，注意对工作进程的跟踪，能够利用各种手段，及时获得反馈，迅速调整方案和策略。<span>分享与提升：</span>重视经验的总结和分享，并以此促进本部门及相关单位工作能力的提升和流程优化。</p>
+				<p class="des" style="line-height:35px;"><em>[典型行为]</em>1.他在布置工作时，能够清晰地让下属了解自己的任务目标、权限和时间限制，促使下属周密规划，以确保任务完成。（得分：{{zhidaoyujiankonga}}分）<br>2.他鼓励下属成长和进步，经常作正面的肯定；容忍失败，给予下属学习实践的时间。他重视经验的总结和分享，运用结对子、师带徒、传帮带、沙龙等多种方式，将自己的经验和专业知识传授给团队，必要时，提供详细的指导或如何做的演示。（得分：{{zhidaoyujiankongb}}分）<br>3. 他对布置给下属的工作要求其及时反馈，在任务执行过程中，注意对工作进程的跟踪，能够利用各种手段，及时获得反馈，迅速调整方案和策略，并根据情况做出相应指导（得分：{{zhidaoyujiankongc}}分）<br>4.他重视经验的总结和分享，并以此促进团队或者组织的工作能力的提升和流程优化。他对下属的特点、优势、特长以及成熟度有比较深入的了解，能够根据下属特点，定制个性化的教练方案，激发员工自行寻求解决方法和对策。（得分：{{zhidaoyujiankongd}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">激励</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>激发、引导和维持他人的工作热情，保证预定目标的实现。</p>
+				<p class="des"><em>[行为表现]</em><span>激励意识：</span>了解激励与提高员工的工作积极性、改进工作效率之间的关系，能够将“保护和激发员工的工作热情”作为组织管理的重要目标。<span>尊重与认可：</span>能够以各种形式认可员工的工作，使他们能够体验到价值感和成就感。<span>鼓励参与：</span>通过职责赋予、制度保证等方法手段，使员工切实参与到组织发展中来，从而获得强烈的参与感、成就感和主人翁感。<span>提升与发展：</span>努力为员工创造更多发展机会和更大发展空间，并对自己和组织的可预见的未来充满信心。<span>公平报偿：</span>不断推动绩效考核和奖酬福利体系的优化进程；以薪酬、职位、赞誉等形式，对员工做出合理的、有竞争力的报偿。<span>个性化激励：</span>能够识别不同部门和员工的激励需求，有针对性地采取个性化激励措施。</p>
+				<p class="des"><em>[典型行为]</em>1.他能够向周围的人清晰的传达公司或者部门的发展愿景和规划，并且帮助下属将目标转化为可衡量的个人业绩指标（得分：{{jilia}}分）<br>2.他注重营造畅通的沟通环境，下属可以通过正式或者非正式的渠道与他进行沟通，顺利表达自己的想法、意见和建议。（得分：{{jilib}}分）<br>3. 他能够以各种形式认可员工的工作，及时表扬做出突出业绩的员工，针对性地采取个性化激励措施，使他们能够体验到价值感和成就感。（得分：{{jilic}}分）<br>4.他能够通过职责赋予、制度保证等方法手段，使员工切实参与到组织发展中来。（得分：{{jilid}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">培养他人</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>指自发的、真诚的去帮助他人提高工作上的知识技能、工作方法和能力素质等。有培养他人的意愿与倾向，关注他们的潜能与可塑性，并在实际工作中帮助其成长。</p>
+				<p class="des"><em>[行为表现]</em><span>鼓励成长：</span>鼓励下属成长和进步，经常作正面的肯定；容忍失败，给予下属学习实践的时间；能够把下属的成功看成是自己的成功而不是威胁。<span>经验传授：</span>不保守不封闭，愿意与他人分享成败的经验。必要时，提供详细的指导或如何做的演示，告诉别人如何完成任务，提出具体、有益的建议。<span>积极引导：</span>向下属表达积极的期待，告诉他们你希望并相信他们可以达成更高的目标。<span>拓展空间：</span>重视培训和职业发展通道的设计，为员工实践所学创造更多机会，使得员工有更大的成长空间。<span>建议与反馈：</span>根据他人特点，给予必要的指导和建设性意见，积极提供反馈，帮助他们更快成长。</p>
+				<p class="des"><em>[典型行为]</em>1.他鼓励下属成长和进步，经常作正面的肯定；容忍失败，给予下属学习实践的时间；能够把下属的成功看成是自己的成功而不是威胁，向下属表达积极的期待，告诉他们自己希望并相信他们可以达成更高的目标。（得分：{{peiyangtarena}}分）<br>2.他关注培训，能够支持公司培训工作的开展，积极参与培训体系构建、课程搭建的工作，或者作为内部讲师亲自授课，向员工传授自身的知识、技能和经验。他能够根据企业战略的需要，有效整合内外部资源，推动建立科学合理的培训体系。（得分：{{peiyangtarenb}}分）<br>3. 他重视培训和员工的职业发展，设计相应的通道，或者作出妥善的安排，为员工实践所学创造更多机会，使得员工有更大的成长空间。（得分：{{peiyangtarenc}}分）<br>4.他不保守不封闭，愿意与别人分享成败的经验。必要时，提供详细的指导或如何做的演示，告诉别人如何完成任务，提出具体、有益的建议。（得分：{{peiyangtarend}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">沟通协调</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>在日常工作中妥善处理好上级、同级、下级等各种关系，使其减少摩擦，能够调动各方面的工作积极性的能力。</p>
+				<p class="des"><em>[行为表现]</em><span>积极沟通：</span>重视且乐于沟通，愿意与人建立联系；在遇到沟通障碍时，能够以积极心态和不懈的努力对待冲突和矛盾，而不是强权或回避。<span>换位思考：</span>能够打破自我中心的思维模式，尝试从对方的角度和立场考虑问题，体察对方感受，促进相互理解。<span>及时反馈：</span>重视信息的分享，用心倾听各方的意见，并根据实际情况及时做出调整和回应。<span>机制保证：</span>能够有意识地在组织中搭建沟通平台，通过机制建设确保沟通渠道的顺畅。</p>
+				<p class="des"><em>[典型行为]</em>1. 他愿与人建立联系，重视信息的分享，用心倾听各方的意见，乐于沟通，遇到沟通阻力时，能够以积极心态和不懈的努力应对。（得分：{{goutongxietiaoa}}分）<br>2.他能够换位思考，从对方的角度和立场考虑问题，体察对方感受，促进相互理解。（得分：{{goutongxietiaob}}分）<br>3. 他将沟通以任务形式明确到工作日程表中，建立定期沟通的规则，以便于加强协调，实现无缝合作和协同。（得分：{{goutongxietiaoc}}分）<br>4.他能够清晰的阐述观点，使下属明确自己的目标和任务，使下属的工作更满足团队的需要。（得分：{{goutongxietiaod}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables"  style="padding: 10px 15px;">
+				<p class="title">制度构建与优化</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>根据组织的战略规划和业务构成，搭建和优化符合组织实际的、系统化的管理与运作制度体系。能够分析和洞察组织内部管理制度中的缺口和薄弱环节，并有针对性地通过制度的建设、补充，不断优化组织管理制度体系，提升和强化行政管理效力。</p>
+				<p class="des"><em>[行为表现]</em><span>制度知识：</span>对标杆组织的管理制度有广泛的了解，探究各种管理制度的原理、作用及其优劣。<span>组织分析：</span>密切关注组织内外部各种因素对组织运作的影响，及时了解与掌握组织管理运作制度的缺口和不尽人意的地方。在制定和修订制度时，能够将各种管理与运作制度进行有机整合，保证制度体系的完整性、系统性和一致性。<span>制度完善：</span>根据执行情况对制度进行客观的评估，对有缺陷或因工作任务的变化而需要改进的制度，及时进行修改、补充或重建，保持行政管理工作正常、高效地开展。</p>
+				<p class="des"><em>[典型行为]</em>1.他对标杆组织的管理制度有广泛的了解，能够准确表达出国内外先进企业在流程、制度、管理体系等方面的做法，总结出公司在标准化体系建设方面实践经验和教训，探究各种管理制度的原理、作用及其优劣，提出改善当前部门运行机制的建议。（得分：{{zhidugoujianyouhuaa}}分）<br>2.他致力于将标准化的体系流程系统有序地推广应用到相关业务领域中；他定期总结和评估标准化系统使用情况和效果，搜集反馈的意见，在此基础提出优化体系的要求和建议。（得分：{{zhidugoujianyouhuab}}分）<br>3. 在制定和修订制度时，他能够从全局出发，考虑公司各个系统和各环节中的复杂关系，对制度进行有机整合，保证制度体系的完整性、系统性和一致性。（得分：{{zhidugoujianyouhuac}}分）<br>4.他针对新的管理标准开展培训，并跟踪标准的实施情况，在充分验证、反复审核、优化的基础上固化最终形成与实践结合的流程化、可视化的体系。（得分：{{zhidugoujianyouhuad}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">后备干部发展报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<div class="tables">
+				<p class="title">全局观念</p>	
+				<p class="des"><em>[定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 义]</em>指一切从系统整体及其全过程出发的思想和准则，是调节系统内部个人和组织、组织和组织、上级和下级、局部和整体之间关系的行为规范。指从组织整体和长期的角度，进行考虑决策、开展工作，保证组织健康发展。</p>
+				<p class="des"><em>[行为表现]</em><span>认清局势：</span>深刻理解组织的战略目标，组织中局部与整体、长期利益与短期利益的关系，以及其他各关键因素在实现组织战略中的作用。<span>尊重规则：</span>有较强的法律、制度意识，尊重组织运作中的各种规则，不会为局部小利而轻易打破规则和已经建立的平衡与秩序。<span>团结协作：</span>倡导部门间相互支援、默契配合，共同完成组织战略目标。<span>甘于奉献：</span>明确局部与整体的关系，在决策时能够通盘考虑；以组织发展大局为重，在必要时能够勇于牺牲局部“小我”和暂时利益，为组织战略实现和长远发展的大局让路。</p>
+				<p class="des"><em>[典型行为]</em>1.他思考问题做事情从来不以本人、自己负责的处室或者部门为中心出发，而能站在更高的层面，从保长客或者部门全局的角度思考，从而对自己的角色与任务进行负责任的定位。（得分：{{quanjuguanniana}}分）<br>2.他能够从全局考虑个人、团队以及组织之间的协同关系，并能把个人与部门、个人与公司、部门之间和及上下级之间等的利益诉求尽可能协同。（得分：{{quanjuguannianb}}分）<br>3. 他重视组织协同的价值，并能够一方面承担好自己的角色，起到自己应有的功能与作用，另一方面推动其他责任相关个体与组织，服务好整体目标。（得分：{{quanjuguannianc}}分）<br>4.他能够保持开放的心态，欣赏、信任、支持别人工作，与团队成员配合很好，能在自己的权责范围内承担起责任。总体目标和整体利益，坚持局部服从和服务于整体，积极配合全局开展工作。（得分：{{quanjuguanniand}}分）</p>
+			</div>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第三部分：管理相关胜任力素质分析</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+	<div class="page">
+		<div class="header">
+			<span class="h-title">胜任力评估个人报告</span>
+			<span class="h-num">姓名：<em class="pname">{{name}}</em></span>
+		</div>
+		<div class="content">
+			<p class="title1" style="margin-top:30px;margin-bottom:0;">第四部分：基本条件梳理 </p>
+			<p class="style3" style="margin-top:10px;">图表5：基本条件梳理表</p>
+			<table class="table51">
+				<tr>
+					<td>
+						<div class="icon1"></div>
+						<div>学历</div>
+						<p class="blue">{{education}}</p>
+					</td>
+					<td>
+						<div class="icon2"></div>
+						<div>工作年限</div>
+						<p class="blue">{{workYears}}年</p>
+					</td>
+					<td>
+						<div class="icon2"></div>
+						<div>行业经验</div>
+						<p class="blue">{{industryYears}}年</p>
+					</td>
+					<td>
+						<div class="icon2"></div>
+						<div>专业经验</div>
+						<p class="blue">{{professionalYears}}年</p>
+					</td>
+					<td>
+						<div class="icon2"></div>
+						<div>管理经验</div>
+						<p class="blue">{{managementYears}}年</p>
+					</td>
+				</tr>
+			</table>
+		</div>	
+		<div class="footer">
+			<span class="h-title">第四部分：基本条件梳理</span>
+			<span class="h-num"></span>
+		</div>				
+	</div>
+</script>
+<script type="text/javascript" src="js/template.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
