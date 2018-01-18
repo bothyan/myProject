@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--[if IE 6 ]> <html id="ne_wrap" class="ne_ua_ie6 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 7 ]> <html id="ne_wrap" class="ne_ua_ie7 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 8 ]> <html id="ne_wrap" class="ne_ua_ie8 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 9 ]> <html id="ne_wrap" class="ne_ua_ie9"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <html id="ne_wrap"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<meta name="viewport" id="viewport" content="target-densitydpi=device-dpi,width=750,user-scalable=0" />
+<title>测测你能在恐怖片里活多久</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/halloween.css" />
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <!-- 音效start -->
+  <audio controls="controls" id="bgm"  hidden="hidden" loop="loop" autoplay="autoplay"> 
+      <source src="bgm.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="buttonm"  hidden="hidden"> 
+      <source src="buttonm.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="bgm1"  hidden="hidden"> 
+      <source src="bgm1.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="bgm2"  hidden="hidden"> 
+      <source src="bgm2.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="bgm3"  hidden="hidden"> 
+      <source src="bgm3.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="bgm4"  hidden="hidden"> 
+      <source src="bgm4.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="bgm5"  hidden="hidden"> 
+      <source src="bgm5.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="bgm6"  hidden="hidden"> 
+      <source src="bgm6.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="bgm7"  hidden="hidden"> 
+      <source src="bgm7.mp3" type="audio/mpeg" />
+  </audio>
+  <audio controls="controls" id="bgm8"  hidden="hidden"> 
+      <source src="bgm8.mp3" type="audio/mpeg" />
+  </audio>
+  <!-- 音效end-->
+  <div class="loading" id="loading" style="display:block">
+    <div class="img"></div>
+    <p class="percent" id="percent"><em>0</em> %</p>
+  </div>
+  <div class="music" id="music"></div>
+  <div class="loading-img" id="loading-img"></div>
+  <div class="pop" id="pop">
+      <div class="kuang">
+          <p class="tips">建议你再考虑一下<br/>不去探险<br/>测试怎么开始？</p>
+          <span class="confirm" id="confirm">确认选择</span>
+          <span class="rechoose" id="rechoose">重新选择</span>
+      </div>
+  </div>
+  <div class="page page0" id="page0">
+      <div class="bg bg0"></div>
+      <div class="bg bg1 layer" data-depth="0"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="bg bg3 layer" data-depth="0.20"></div>
+      <div class="theme"></div>
+      <div class="go goAni "></div>
+      <div class="enter" id="enter"></div>
+  </div>
+  <div class="page page1" id="page1">
+      <div class="bg bg1 layer" data-depth="0"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="bg bg3 layer" data-depth="0.20"></div>
+      <div class="bg bg4 layer" data-depth="0.30"></div>
+      <div class="question">
+          <span class="icon"></span>
+          <p class="title">假期，朋友叫你去野外探险，你考虑过后，会如何选择?</p>
+          <ul _index="1">
+              <li class="li1" _score="-1">a、山里太危险，我还是留在家里躺尸吧</li>
+              <li class="li2" _score="0">b、这么刺激的事情，怎么能错过</li>
+          </ul>
+      </div>
+  </div>
+  <div class="page page2" id="page2">
+      <div class="bg bg1 layer" data-depth="0.00"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="bg bg3 layer" data-depth="0.20"></div>  
+      <div class="question">
+          <span class="icon"></span>
+          <p class="title">行程确定，一行人前往深山里的别墅，路上遇到一个出了故障的车，你会？</p>
+          <ul _index="2">
+              <li class="li1" _score="1">a、停车问问发生了什么，留下一些水和食物</li>
+              <li class="li2" _score="3">b、赶路要紧，踩一脚油门，快速超车</li>
+              <li class="li3" _score="2">c、叫他上车，把他送到最近的服务区</li>
+          </ul>
+      </div> 
+  </div>
+  <div class="page page3" id="page3">
+      <div class="bg bg1 layer" data-depth="0.00"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="bg bg3 layer" data-depth="0.20"></div> 
+      <div class="bg bg4 layer" data-depth="0.30"></div> 
+      <div class="question">
+          <span class="icon"></span>
+          <p class="title">到达别墅后，你和心仪的异性去了湖边，气氛很暧昧，你们来了兴致，此时你希望？</p>
+          <ul _index="3">
+              <li class="li1" _score="3">a、难得的机会，一定要纵情山林</li>
+              <li class="li2" _score="1">b、及时「刹车」，毕竟还有朋友同行</li>
+              <li class="li3" _score="2">c、先回到别墅，有些事情要在适合的地方做</li>
+          </ul>
+      </div> 
+  </div>
+  <div class="page page4" id="page4">
+      <div class="bg bg1 layer" data-depth="0.00"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="bg bg3 layer" data-depth="0.20"></div>
+      <div class="bg bg4 layer" data-depth="0.30"></div>  
+      <div class="question">
+          <span class="icon"></span>
+          <p class="title">晚饭时，别墅突然停电，一片漆黑，此时你会？</p>
+          <ul _index="4">
+              <li class="li1" _score="1">a、翻出包里的蜡烛，改成烛光晚宴</li>
+              <li class="li2" _score="3">b、拿出手电筒，去看看是不是保险丝断了</li>
+              <li class="li3" _score="2">c、玩捉迷藏吧</li>
+          </ul>
+      </div>  
+  </div>
+  <div class="page page5" id="page5">
+      <div class="bg bg1 layer" data-depth="0.00"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="bg bg3 layer" data-depth="0.20"></div> 
+      <div class="question">
+          <span class="icon"></span>
+          <p class="title">你无意中翻到了一本书，书上记载着一个古老游戏的玩法，经过慎重的考虑，你决定？</p>
+          <ul _index="5"> 
+              <li class="li1" _score="2">a、别人东西不能随便碰，将笔记本放回原处</li>
+              <li class="li2" _score="3">b、叫来朋友，立即开启「游戏模式」</li>
+              <li class="li3" _score="1">c、把笔记本烧了</li>
+          </ul>
+      </div>   
+  </div>
+  <div class="page page6" id="page6">
+      <div class="bg bg1 layer" data-depth="0.00"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="question">
+          <span class="icon"></span>
+          <p class="title">过了 12 点，大家各自回到房间休息，客厅里传来了急促的脚步声，你的反应是？</p>
+          <ul _index="6">
+              <li class="li1" _score="3">a、立即打开门去看看发生了什么</li>
+              <li class="li2" _score="2">b、情况不对，赶紧锁紧房门</li>
+              <li class="li3" _score="1">c、吓死了，大喊一声叫醒隔壁的同伴</li>
+          </ul>
+      </div>    
+  </div>
+  <div class="page page7" id="page7">
+      <div class="bg bg1 layer" data-depth="0.00"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="miao"></div>
+      <div class="question">
+          <span class="icon"></span>
+          <p class="title">同伴们也听到了客厅的声音，陆续走出房间，地下室传来一声猫叫，此时你要？</p>
+          <ul _index="7">
+              <li class="li1" _score="3">a、叫上同伴，去地下室一探究竟</li>
+              <li class="li2" _score="1">b、这屋子有问题，收拾行李，连夜离开</li>
+              <li class="li3" _score="2">c、屏住呼吸，以静制动</li>
+          </ul>
+      </div> 
+  </div>
+  <div class="page page8" id="page8">
+      <div class="bg bg1 layer" data-depth="0.00"></div>
+      <div class="bg bg2 layer" data-depth="0.10"></div>
+      <div class="button">
+        <a class="zhinan" href="https://www.zhihu.com/publications/book/119552676">恐怖片生存指北</a>
+        <a class="share" href="javascript:void(0)" id="share">叫朋友来测试</a>
+        <a class="restart" id="restart">再来一次</a>
+      </div>
+      <div class="logo"></div>
+      <p class="msg">本次测试仅供万圣节娱乐<br/>灵感来源：知乎用户@几涓在问题「恐怖片里有哪些惯用的领便当/作死模式？中的回答<br/>@孤鸿影在问题「如何才能在绝大多数的恐怖片中生存？的回答</p>
+      <p class="result result0">测试结果计算中...</p>
+      <p class="result result1">
+        好吧<br/>你不适合出现在恐怖片中<br/>建议移步隔壁片场<br/>加油！
+      </p>
+      <p class="result result2">
+        经测试<br/>你就是恐怖片主角本人！
+      </p>
+      <p class="result result3">你的戏份仅次于主角<br/>影片最后 10 分钟<br/>你依然有戏</p>
+      <p class="result result4">你竟然撑到了电影中场<br/>如果跟主角关系亲密<br/>戏份再加20分钟</p>
+      <p class="result result5">你勇气有余<br/>经验欠佳<br/>恐怖片开场半个小时后<br/>将惨烈谢幕</p>
+      <p class="result result6">在恐怖片里<br/>你勉强<br/>可以活到10分钟<br/>打一次别人记不住的酱油</p>
+      <!-- <p class="result result7">你的勇气欠佳，<br/>将无法出现在恐怖片中，<br/>请移步隔壁片场。</p> -->
+  </div>
+  <div class="sharetips" id="sharetips">
+  </div>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="js/rotate.js" ></script>
+<script type="text/javascript" src="js/halloween.js" ></script>
+
+</body>
+</html>

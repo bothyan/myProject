@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>仪表盘</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<link rel="stylesheet" type="text/css" href="css/dash.css">
+</head> 
+<body>
+	<div class="dash-content" id="dash-content">
+		<p class="title">仪表盘</p>
+		<ul class="dash-head" id="dash-head">
+			<li class="li1">	
+			</li>	
+			<li class="li2">
+			</li>	
+			<li class="li3">
+			</li>	
+			<li class="li4">
+			</li>	
+		</ul>	
+		<div class="con1">
+			<div class="left">
+				<div class="box box1" id="dash-box1" _index="1">
+					<p class="ti">调用量<em>当月总数</em></p>
+					<p class="num timer" data-speed="1000" data-from="0" data-to="">0</p>
+					<p class="today timer" data-speed="1000" data-from="0" data-to="">0</p>
+					<p class="totips">今天增长</p>
+					<img src="images/line2.png" />
+				</div>
+				<div class="box box2" id="dash-box2" _index="2">
+					<p class="ti">分享量</p>
+					<div class="data2" id="data2"></div>
+					<div class="table">
+						<p class="num timer" data-speed="1000" data-from="0" data-to="">0</p>
+						<p class="tips">当月总数</p>
+					</div>
+				</div>
+				<div class="box box3" id="dash-box3" _index="3">
+					<p class="ti">用户量</p>
+					<div class="data3" id="data3"></div>
+					<div class="table">
+						<p class="num timer" data-speed="1000" data-from="0" data-to="">0</p>
+						<p class="tips">当月总数</p>
+					</div>
+				</div>
+				<div class="box box4" id="dash-box4" _index="4">
+					<p class="ti">来电量</p>
+					<p class="num timer" data-speed="1000" data-from="0" data-to="">0</p>
+					<p class="tips">当月总数</p>
+					<img src="images/line1.png" />
+				</div>
+			</div>
+			<div class="right box box5" id="dash-box5" _index="5">
+				<p class="ti">浏览量</p>
+				<p class="box5-nav" id="box5-nav">
+					<em _type="year">年</em>
+					<em _type="month" class="select">月</em>
+					<em _type="week">周</em>
+					<em _type="day">日</em>
+				</p>
+				<div class="amount">
+					<div class="p1">
+						<p class="num timer" data-speed="1000" data-from="0" data-to="">0</p>
+						<p class="tips">当前总数</p>
+					</div>
+					<div class="p2">
+						<p class="num timer" data-speed="1000" data-from="0" data-to="">0</p>
+						<p class="tips">上月总数</p>
+					</div>
+				</div>
+				<div class="data5" id="data5"></div>
+			</div>
+		</div>
+		<div class="con2">
+			<div class="left box box6" _index="6">
+				<p class="ti">位置</p>
+				<img src="images/location.png" />
+				<div class="tips">朝阳区</div>
+			</div>
+			<div class="right">
+				<div class="box box7"  _index="7">
+					<p class="ti">转化率（来电量和IP）</p>
+					<div class="data7" id="data7"></div>
+				</div>
+				<div class="box box8" _index="8">
+					<p class="ti">数据统计</p>
+					<div class="data8" id="data8"></div>
+				</div>
+				<div class="box box9" _index="9">
+					<p class="ti">转化率（分享量和IP）</p>
+					<div class="data9" id="data9"></div>
+				</div>
+				<div class="box10">
+					<p class="ti">联系我们</p>
+					<p class="tips">遇到什么问题，及时联系我们哦</p>
+					<span class="send">发送文件</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dashpop" id="dashpop">
+		<span class="close">X</span>	
+		<ul class="pop-head" id="pop-head">
+			<li class="li1">	
+			</li>	
+			<li class="li2">
+			</li>	
+			<li class="li3">
+			</li>	
+			<li class="li4">
+			</li>	
+		</ul>	
+		<div class="select-box">
+			<select class="form-control" id="dashselect" name="name"></select>
+			<select class="form-control" id="select-time" name="time">
+				<option value="year">按年统计</option>
+				<option value="month">按月统计</option>
+				<option value="week">按周统计</option>
+				<option value="day">按日统计</option>
+			</select>
+			<select class="form-control" id="toggle" name="imagetype">
+			  <option value="bar">柱状图</option>
+	          <option value="line">折线图</option>
+	          <option value="area">面积图</option>
+	        </select>
+		</div>
+		<div id="popdata" class="popdata"></div>
+	</div>
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/echarts.js"></script>
+	<script type="text/javascript" src="js/dash.js"></script>
+</body>
+</html>
