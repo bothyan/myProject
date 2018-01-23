@@ -12,6 +12,9 @@
 	<script type="text/javascript" src="js/echarts.js"></script>
 	<script type="text/javascript" src="js/echarts_require.js"></script>
 	<script  src="js/map.js"></script>  
+	<script>
+		var HOST = "http://114.215.223.220:8081";	
+	</script>
 </head> 
 <body>
 	<div class="box" style="background:url(images/daping.jpg)">
@@ -36,15 +39,15 @@
 					<div class="numup">
 						<div class="div1">
 							<p class="p1">今日交易金额<em>元</em></p>
-							<p class="p2 timer" data-speed="1000" data-from="0" data-to="8642027291.76">8642027291.76</p>	
+							<p class="p2 timer amount" data-decimals="2" data-speed="1000" data-from="0" data-to=""></p>	
 						</div>
 						<div class="div2">
 							<p class="p1">今日交易笔数<em>笔</em></p>
-							<p class="p2 timer" data-speed="1000" data-from="0" data-to="12759254">12759254</p>	
+							<p class="p2 timer totalnum"  data-speed="1000" data-from="0" data-to=""></p>	
 						</div>
 					</div>	
 					<div class="numdown">
-						今日开票张数<span class="timer" data-speed="1000" data-from="0" data-to="2070">2070</span><em style="margin-right:50px">张</em>今日广告曝光<span class="timer" data-speed="1000" data-from="0" data-to="2070">2070</span><em>次</em>
+						今日开票张数<span class="timer invoicenum" data-speed="1000" data-from="0" data-to=""></span><em style="margin-right:50px">张</em>今日广告曝光<span class="timer adnum" data-speed="1000" data-from="0" data-to=""></span><em>次</em>
 					</div>	
 				</div>
 				<div class="data4">
@@ -70,19 +73,12 @@
 				<div class="data data7">
 					<p class="title">开票数据实时滚动</p>
 					<div class="table">
-						<table>
-							<thead>
-								<tr><td>收票方</td><td>金额</td></tr>
-							</thead>
-							<tbody>
-								<tr><td>巴拉巴拉餐饮公司</td><td>800</td></tr>
-								<tr><td>世纪华联</td><td>1200</td></tr>
-								<tr><td>巴拉巴拉餐饮公司</td><td>800</td></tr>
-								<tr><td>世纪华联</td><td>1200</td></tr>
-								<tr><td>巴拉巴拉餐饮公司</td><td>800</td></tr>
-								<tr><td>世纪华联</td><td>1200</td></tr>
-							</tbody>
-						</table>	
+						<div class="tables">
+							<div class="thead">
+								<span>收票方</span><span>金额</span>
+							</div>
+							<ul id="invoice"></ul>
+						</div>
 					</div>
 				</div>
 			</div>

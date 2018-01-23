@@ -220,31 +220,52 @@ body {
   background: rgba(8, 18, 60, 0.5);
   height: 241px;
 }
-.data7 table {
+.data7 .tables {
   width: 100%;
   border: 1px solid #83e6ff;
   color: #8090ce;
   text-align: center;
 }
-.data7 thead {
+.data7 .thead {
   background: #0306b0;
   font-size: 22px;
   border-bottom: 1px solid #6288ff;
   text-align: center;
-}
-.data7 tbody {
-  font-size: 18px;
-}
-.data7 tr {
   height: 34px;
 }
-.data7 tr td:first-child {
+.data7 .thead span {
+  display: block;
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  width: 40%;
+}
+.data7 .thead span:first-child {
   border-right: 1px solid #6288ff;
   width: 60%;
 }
-.data7 tr:nth-child(even) {
+.data7 ul {
+  font-size: 18px;
+  height: 204px;
+  overflow: hidden;
+}
+.data7 li {
+  height: 34px;
+}
+.data7 li span {
+  display: block;
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  width: 40%;
+}
+.data7 li span:first-child {
+  border-right: 1px solid #6288ff;
+  width: 60%;
+}
+.data7 li:nth-child(even) {
   background: #00007c;
 }
-.data7 tr:nth-child(odd) {
+.data7 li:nth-child(odd) {
   background: #0306b0;
 }

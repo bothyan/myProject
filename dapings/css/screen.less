@@ -210,37 +210,59 @@ body{
 	height:276px;
 	margin-bottom:0;
 	.table{
-		width:100%;
+		width:100%; 
 		border:1px solid #4da1e1;
 		background:rgba(8,18,60,0.5);
 		height:241px;
 	}
-	table{
+	.tables{
 		width:100%;
 		border:1px solid #83e6ff;
 		color:#8090ce;
 		text-align:center;
 	}
-	thead{
+	.thead{
 		background:#0306b0;
-		font-size:22px;
+		font-size:22px; 
 		border-bottom:1px solid #6288ff;
 		text-align:center;
-	}
-	tbody{
-		font-size:18px;
-	}
-	tr{
 		height:34px;
-		td:first-child{
+		span{
+			display:block;
+			float:left;
+			height:34px;
+			line-height:34px;
+			width:40%;
+		}
+		span:first-child{
 			border-right:1px solid #6288ff;
 			width:60%;
+		}
+	}
+	ul{
+		font-size:18px;
+		height:204px;
+		overflow:hidden;
+	}
+	li{
+		height:34px;
+		span{
+			display:block;
+			float:left;
+			height:34px;
+			line-height:34px;
+			width:40%;
+		}
+		span:first-child{
+			border-right:1px solid #6288ff;
+			width:60%;
+			
 		}
 		&:nth-child(even){
 			background:#00007c;
 			
 		}
-		&:nth-child(odd){
+		&:nth-child(odd){ 
 			background:#0306b0;
 		}
 	}
