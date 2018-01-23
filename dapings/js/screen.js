@@ -357,8 +357,8 @@ require(
             this.myCharts.push(myChart);  
         },
         data3:function(x,y){
-            var xdata = x;
-            var xdis = [xdata[0],xdata[1]-xdata[0],xdata[2]-xdata[1],xdata[3]-xdata[2],xdata[4]-xdata[3],xdata[5]-xdata[4]];
+            var xdata = [0,x[0],x[1],x[2],x[3],x[4]];
+            var xdis = [x[0],x[1]-x[0],x[2]-x[1],x[3]-x[2],x[4]-x[3],x[5]-x[4]];
             var option = {
                 tooltip : {
                   trigger: 'axis'
@@ -411,7 +411,7 @@ require(
                                 color:'rgba(0,0,0,0)'
                             }
                         },
-                        data:x
+                        data:xdata
                     },
                     {
                         type:'bar',
@@ -432,7 +432,7 @@ require(
                         textStyle:{
                             color:"#8894c4"
                         },
-                        data:xdis
+                       data:xdis
                     }
                 ]
             };
