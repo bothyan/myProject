@@ -88,6 +88,18 @@ require(
             render(value);
         });
  	}
+    function indexOf(arr, item) {
+      if (Array.prototype.indexOf){
+          return arr.indexOf(item);
+      } else {
+          for (var i = 0; i < arr.length; i++){
+              if (arr[i] === item){
+                  return i;
+              }
+          }
+      }     
+      return -1;
+    }
 	var mainFun = {
         myCharts:[],
         scrolltag :true,
@@ -119,6 +131,7 @@ require(
                 dataType:"json",
                 type:"get",
                 success:function(res){
+                    console.log(res);
                     var resdata = res.data;
                     $(".amount").data('to',resdata.amount);
                     $(".totalnum").data('to',resdata.totalNum);
@@ -145,7 +158,6 @@ require(
                 type:"get",
                 success:function(res){
                     var length = res.data.length-1;
-                    console.log(length);
                     $.each(res.data,function(k,v){
                         var $td = $("<li><span>"+v.buyerName+"</span><span>"+v.amount+"</span></li>")
                         $("ul#invoice").append($td);
@@ -221,8 +233,11 @@ require(
 			});
 		},
         data1:function(x,y){
+            for(var i=0;i<x.length;i++){
+                var num = x[i]/10000;
+                x[i] = num.toFixed(2);
+            }
             var option = {
-                
                 tooltip : {
                     trigger: 'axis'
                 },
@@ -235,11 +250,14 @@ require(
                         type : 'category',
                         data : y,
                         axisLabel:{
-                            interval:0
+                            interval:0,
+                            textStyle:{
+                                fontSize:15
+                            }
                         },
                         axisLine:{
                             lineStyle:{
-                                color:"#8894c4" 
+                                color:"#8894c4"
                             }
                         }
                     }
@@ -250,7 +268,10 @@ require(
                         splitLine:{show: false}, 
                         type : 'value',
                         axisLabel:{
-                            interval:0
+                            interval:0,
+                            textStyle:{
+                                fontSize:15
+                            }
                         },
                         axisLine:{
                             lineStyle:{
@@ -286,6 +307,10 @@ require(
             this.myCharts.push(myChart); 
         },
         data2:function(x,y){
+            for(var i=0;i<x.length;i++){
+                var num = x[i]/10000;
+                x[i] = num.toFixed(2);
+            }
             var option = {
                 tooltip : {
                   trigger: 'axis'
@@ -300,7 +325,10 @@ require(
                     boundaryGap : false,
                     data : y,
                     axisLabel:{
-                        interval:0
+                        interval:0,
+                        textStyle:{
+                            fontSize:15
+                        }
                     },
                     axisLine:{
                         lineStyle:{
@@ -315,7 +343,10 @@ require(
                     splitLine:{show: false}, 
                     type : 'value',
                     axisLabel:{
-                        interval:0
+                        interval:0,
+                        textStyle:{
+                            fontSize:15
+                        }
                     },
                     axisLine:{
                         lineStyle:{
@@ -329,12 +360,13 @@ require(
                     name:'交易总笔数',
                     type:'line',
                     symbol:"circle",
+                    smooth:true, 
                     itemStyle: {
                       normal: {
                         color:'#64b9fa',
                         areaStyle:{
                           type: 'default',
-                          color:new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                          color:new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
                             color: '#77defd'
                           }, {
@@ -357,8 +389,11 @@ require(
             this.myCharts.push(myChart);  
         },
         data3:function(x,y){
-            var xdata = [0,x[0],x[1],x[2],x[3],x[4]];
-            var xdis = [x[0],x[1]-x[0],x[2]-x[1],x[3]-x[2],x[4]-x[3],x[5]-x[4]];
+            for(var i=0;i<x.length;i++){
+                x[i] = parseInt(x[i]);
+            }
+            var xdata = [0,x[0],x[0]+x[1],x[0]+x[1]+x[2],x[0]+x[1]+x[2]+x[3],x[0]+x[1]+x[2]+x[3]+x[4]];
+            var xdis = x;
             var option = {
                 tooltip : {
                   trigger: 'axis'
@@ -373,7 +408,10 @@ require(
                         splitLine: {show:false},
                         data :  y,
                         axisLabel:{
-                            interval:0
+                            interval:0,
+                            textStyle:{
+                                fontSize:15
+                            }
                         },
                         axisLine:{
                             lineStyle:{
@@ -384,11 +422,14 @@ require(
                 ],
                 yAxis : [
                     {
-                        name : '金额(万)',
+                        name : '',
                         splitLine:{show: false}, 
                         type : 'value',
                         axisLabel:{
-                            interval:0
+                            interval:0,
+                            textStyle:{
+                                fontSize:15
+                            }
                         },
                         axisLine:{
                             lineStyle:{
@@ -443,10 +484,12 @@ require(
         },
         data4:function(data){
             var data1 = [],databoj1 = {};
+            var max = 0;
             $.each(data,function(k,v){
                 var dataobj = {};
                 dataobj.name = v.name;
                 dataobj.value = v.value;
+                max = Math.max(max,v.value);
                 data1.push(dataobj);
                 databoj1[v.name] = v.position;
             });
@@ -456,9 +499,9 @@ require(
                     y:"480",
                     itemWidth:40,
                     min : 0,
-                    max : 500,
+                    max : max,
                     splitNumber: 0,
-                    text:['百万','零'],
+                    text:['最大','最小'],
                     textStyle:{color:"#756192"},
                     color: ['#6c3d3e','#fb080d']
                 },
@@ -472,11 +515,13 @@ require(
                         data : [],
                         itemStyle:{
                                 normal:{
-                                    color:'#1456ce'
+                                    color:'#1456ce',
+                                    borderWidth:2,//省份的边框宽度
+                                    borderColor:'#42d2ff'
                                 }
                             },
                         markPoint : {
-                            symbolSize: 5,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+                            symbolSize: 0,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
                             itemStyle: {
                                 normal: {
                                     label: {
@@ -484,52 +529,8 @@ require(
                                     }
                                 }
                             },
-                           /* data : [
-                                {name: "海门", value: 9},
-                                {name: "鄂尔多斯", value: 12},
-                                {name: "招远", value: 12},
-                                {name: "舟山", value: 12},
-                                {name: "齐齐哈尔", value: 14},
-                                {name: "盐城", value: 15},
-                                {name: "赤峰", value: 16},
-                                {name: "青岛", value: 18},
-                                {name: "乳山", value: 18},
-                                {name: "金昌", value: 19},
-                                {name: "泉州", value: 21},
-                                {name: "莱西", value: 21},
-                                {name: "日照", value: 21},
-                                {name: "胶南", value: 22},
-                                {name: "南通", value: 23},
-                                {name: "拉萨", value: 24},
-                                {name: "云浮", value: 24},
-                                {name: "梅州", value: 25},
-                                {name: "文登", value: 25},
-                                {name: "上海", value: 25}   
-                            ]*/
                             data:data1
                         },
-                        /*geoCoord: {
-                            "海门":[121.15,31.89],
-                            "鄂尔多斯":[109.781327,39.608266],
-                            "招远":[120.38,37.35],
-                            "舟山":[122.207216,29.985295],
-                            "齐齐哈尔":[123.97,47.33],
-                            "盐城":[120.13,33.38],
-                            "赤峰":[118.87,42.28],
-                            "青岛":[120.33,36.07],
-                            "乳山":[121.52,36.89],
-                            "金昌":[102.188043,38.520089],
-                            "泉州":[118.58,24.93],
-                            "莱西":[120.53,36.86],
-                            "日照":[119.46,35.42],
-                            "胶南":[119.97,35.88],
-                            "南通":[121.05,32.08],
-                            "拉萨":[91.11,29.97],
-                            "云浮":[112.02,22.93],
-                            "梅州":[116.1,24.55],
-                            "文登":[122.05,37.2],
-                            "上海":[121.48,31.22]
-                        }*/
                         geoCoord:databoj1
                     },
                     {
@@ -540,7 +541,7 @@ require(
                         markPoint : {
                             symbol:'circle',
                             symbolSize : function (v){
-                                return 10 + v/100
+                                return 10
                             },
                             effect : {
                                 show: true,
@@ -567,22 +568,26 @@ require(
                 datax.push(v.name);
                 datay.push(v.value);
             });
-            var option = {
-                
+            var option = {    
                 tooltip : {
-                    trigger: 'axis'
+                    trigger: 'axis',
+                    formatter: '{c}%'
                 },
                 grid:{
-                    x:"17%"
+                    x:"17%",
+                    width:"70%"
                 },
                 xAxis : [
                     {
                         show:false,
                         splitLine:{show: false},
                         type : 'value',
-                        data : ["1000","900","700","600","500","400"],
+                        data : ["100","90","70","60","50","40"],
                         axisLabel:{
-                            interval:0
+                            interval:0,
+                            textStyle:{
+                                fontSize:15
+                            }
                         },
                         axisLine:{
                             lineStyle:{
@@ -598,7 +603,10 @@ require(
                         data : datax,
                         splitLine:{show: false}, 
                         axisLabel:{
-                            interval:0
+                            interval:0,
+                            textStyle:{
+                                fontSize:15
+                            }
                         },
                         axisLine:{
                             lineStyle:{
@@ -613,7 +621,9 @@ require(
                         symbol:"arrow",
                         name:'交易总金额',
                         type:'bar',
-                        data:datay
+                        data:datay,
+                        itemStyle : { normal: {label : {show: true, position: 'right',formatter: "{c}%",textStyle:{fontSize:15,color:"#8894c4"}}}},
+
                     }
                 ],
                 itemStyle:{
@@ -634,29 +644,53 @@ require(
             this.myCharts.push(myChart); 
         },
         data6:function(data){
+            var datax = [],datay = [];
+            var total = 0;
+            $.each(data,function(k,v){
+                datax.push(v.name);
+                datay.push(v.value);
+                total+= parseInt(v.value);
+            });
             var option = {
                 tooltip : {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    trigger: 'item'
                 },
-                /*calculable : true,
-                    legend: {
-                    orient : 'vertical',
-                    x : 'left',
-                    data:['收款机','收银厂商','商户app','收银插件','POS机']
-                },*/
+                grid:{
+                    y:"20%",
+                    width:"70%"
+                },
+                legend: {
+                    orient: 'horizontal',
+                    x: 'left',
+                    data:datax,
+                    itemGap:-5,
+                    padding:3,
+                    itemWidth:10,
+                    itemHeight:10,
+                    textStyle:{fontSize:10,color:"#8894c4"},
+                    formatter: function(name) {
+                        var num = datay[indexOf(datax,name)];
+                        num = (num*100/total).toFixed(2);
+                        return name + ":"+num+"%";
+                    }
+                },
+                color:['#24ff00', '#00f6ff','#ff01cc','#ff0000','#fffc00'],  
                 series : [
                     {
                         name:'交易来源',
                         type:'pie',
-                        radius : ['60%', '80%'],
+                        radius: ['40%', '60%'],
+                        center : ['50%', '60%'],
                         itemStyle : {
                             normal : {
                                 label : {
                                     show : false
+                                    /*formatter: "{b}\n{d}%",
+                                    position:'outer',
+                                    textStyle:{fontSize:12,color:"#8894c4"}*/
                                 },
                                 labelLine : {
-                                    show : false
+                                    show : true
                                 }
                             },
                             emphasis : {
@@ -680,29 +714,50 @@ require(
             this.myCharts.push(myChart);           
         },
         data7:function(data){
+            var datax = [],datay = [];
+            var total = 0;
+            $.each(data,function(k,v){
+                datax.push(v.name);
+                datay.push(v.value);
+                total+= parseInt(v.value);
+            });
             var option = {
                 tooltip : {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    trigger: 'item'
                 },
+                legend: {
+                    orient: 'horizontal',
+                    x: 'left',
+                    data:datax,
+                    itemGap:-5,
+                    padding:3,
+                    itemWidth:10,
+                    itemHeight:10,
+                    textStyle:{fontSize:10,color:"#8894c4"},
+                    formatter: function(name) {
+                        var num = datay[indexOf(datax,name)];
+                        num = (num*100/total).toFixed(2);
+                        return name + ":"+num+"%";
+                    }
+                },
+                color:['#24ff00', '#00f6ff','#ff01cc','#ff0000','#fffc00'],  
                 calculable : true,
-               /* legend: {
-                    orient : 'vertical',
-                    x : 'left',
-                    data:['微信','支付宝','云闪付','银联','其它']
-                },*/
                 series : [
                     {
                         name:'支付方式',
                         type:'pie',
-                        radius : ['60%', '80%'],
+                        radius: ['40%', '60%'],
+                        center : ['50%', '60%'],
                         itemStyle : {
                             normal : {
                                 label : {
                                     show : false
+                                    /*formatter: "{b}({d}%)",
+                                    position:'inner',
+                                    textStyle:{fontSize:12,fontWeight : 'bold',color:"#8894c4"}*/
                                 },
                                 labelLine : {
-                                    show : false
+                                    show : true
                                 }
                             },
                             emphasis : {
