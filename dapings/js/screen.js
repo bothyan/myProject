@@ -1,4 +1,5 @@
 (function($){
+    var monthNow,hourNow;
 require(  
     [   
       'echarts',   
@@ -118,12 +119,12 @@ require(
 			}); 
 			this.handle();
             this.datas();
+            this.ajaxtime();
             this.tabledata();
             window.setInterval(function(){
                 mainFun.tabledata();
             },20000)
             mainFun.counttoday();
-
 		},
         counttoday:function(){
             $.ajax({
@@ -180,9 +181,79 @@ require(
                     $("ul#invoice").scrollTop(scrollTops);
                 }
             },20)
+        },
+        ajaxtime:function(){
+            var that = this;
+            window.setInterval(function(){
+                var date = new Date();
+                var month =date.getMonth() + 1;
+                if(month != monthNow){
+                    $("#charts1").remove();
+                    var $charts1 = $('<div class="charts charts1" id="charts1"></div>');
+                    $(".data1").append($charts1);
+                    $("#charts2").remove();
+                    var $charts2 = $('<div class="charts charts2" id="charts2"></div>');
+                    $(".data2").append($charts2);
+                    $("#charts3").remove();
+                    var $charts3 = $('<div class="charts charts3" id="charts3"></div>');
+                    $(".data3").append($charts3);
+                    $.ajax({
+                        url:HOST+"/dashboard/countMonth",
+                        dataType:"json",
+                        type:"get",
+                        success:function(res){
+                            that.data1(res.data.amount,res.data.time);
+                            that.data2(res.data.num,res.data.time);
+                            that.data3(res.data.ad,res.data.time);
+                        }
+                    });
+                    monthNow = month;
+                }
+            },3600000);
 
+            window.setInterval(function(){
+                var date = new Date();
+                var hour = date.getHours();
+                if(hour != hourNow){
+                    $("#charts4").remove();
+                    var $charts4 = $('<div class="charts charts4" id="charts4"></div>');
+                    $(".data4").append($charts4);
+                    $("#charts5").remove();
+                    var $charts5 = $('<div class="charts charts5" id="charts5"></div>');
+                    $(".data5").append($charts5);
+                    $("#charts6").remove();
+                    var $charts6 = $('<div class="charts charts6" id="charts6"></div>');
+                    $(".data6").append($charts6);
+                    $("#charts7").remove();
+                    var $charts7 = $('<div class="charts charts7" id="charts7"></div>');
+                    $(".data7").append($charts7);
+                    $.ajax({
+                        url:HOST+"/dashboard/todayCountry",
+                        dataType:"json",
+                        type:"get",
+                        success:function(res){
+                            that.data4(res.data);
+                        }
+                    });
+                    $.ajax({
+                        url:HOST+"/dashboard/countOther",
+                        dataType:"json",
+                        type:"get",
+                        success:function(res){
+                            that.data5(res.data.ic);
+                            that.data6(res.data.ts);
+                            that.data7(res.data.pt);
+                        }
+                    })  
+                    hourNow = hour;
+                }
+            },60000);
         },
 		datas:function(){		
+            var date = new Date();
+            monthNow = date.getMonth() + 1;
+            hourNow = date.getHours();
+            console.log(monthNow,hourNow);
             var that = this;
             $.ajax({
                 url:HOST+"/dashboard/countMonth",
@@ -527,6 +598,15 @@ require(
                                     label: {
                                         show: false
                                     }
+                                },
+                                emphasis: {
+                                   label: {  
+                                        show: true,  
+                                        textStyle: {  
+                                            color: '#fff' ,
+                                            fontSize:0 
+                                        }  
+                                    } 
                                 }
                             },
                             data:data1
@@ -534,7 +614,7 @@ require(
                         geoCoord:databoj1
                     },
                     {
-                        name: 'Top5',
+                        name: 'Top',
                         type: 'map',
                         mapType: 'china',
                         data:[],
@@ -550,6 +630,15 @@ require(
                             itemStyle:{
                                 normal:{
                                     label:{show:false}
+                                },
+                                emphasis: {
+                                    label: {  
+                                        show: true,  
+                                        textStyle: {  
+                                            color: '#fff',
+                                            fontSize:0   
+                                        }  
+                                    }  
                                 }
                             },
                             data : data1
@@ -575,7 +664,9 @@ require(
                 },
                 grid:{
                     x:"17%",
-                    width:"70%"
+                    width:"70%",
+                    height:"80%",
+                    y:"10%"
                 },
                 xAxis : [
                     {
@@ -663,11 +754,11 @@ require(
                     orient: 'horizontal',
                     x: 'left',
                     data:datax,
-                    itemGap:-5,
-                    padding:3,
+                    itemGap:5,
+                    padding:[0,0,-10,0],
                     itemWidth:10,
                     itemHeight:10,
-                    textStyle:{fontSize:10,color:"#8894c4"},
+                    textStyle:{fontSize:13,color:"#8894c4"},
                     formatter: function(name) {
                         var num = datay[indexOf(datax,name)];
                         num = (num*100/total).toFixed(2);
@@ -729,11 +820,11 @@ require(
                     orient: 'horizontal',
                     x: 'left',
                     data:datax,
-                    itemGap:-5,
-                    padding:3,
+                    itemGap:5,
+                    padding:[0,0,-10,0],
                     itemWidth:10,
                     itemHeight:10,
-                    textStyle:{fontSize:10,color:"#8894c4"},
+                    textStyle:{fontSize:13,color:"#8894c4"},
                     formatter: function(name) {
                         var num = datay[indexOf(datax,name)];
                         num = (num*100/total).toFixed(2);
