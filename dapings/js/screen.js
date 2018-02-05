@@ -25,14 +25,13 @@ require(
             // set options for current element
             var settings = $.extend({}, $.fn.countTo.defaults, 
             {
-                from:            $(this).data('from'),
-                to:              $(this).data('to'),
+                from:            parseFloat($(this).attr('data-from')),
+                to:              parseFloat($(this).attr('data-to')),
                 speed:           $(this).data('speed'),
                 refreshInterval: $(this).data('refresh-interval'),
                 decimals:        $(this).data('decimals'),
                 onComplete:null
             }, options);
-            
             // how many times to update the value, and how much to increment the value on each update
             var loops = Math.ceil(settings.speed / settings.refreshInterval),
                 increment = (settings.to - settings.from) / loops;
@@ -124,7 +123,10 @@ require(
             window.setInterval(function(){
                 mainFun.tabledata();
             },20000)
-            mainFun.counttoday();
+            this.counttoday();
+            window.setInterval(function(){
+                mainFun.counttoday();
+            },10000);
 		},
         counttoday:function(){
             $.ajax({
@@ -132,22 +134,20 @@ require(
                 dataType:"json",
                 type:"get",
                 success:function(res){
-                    console.log(res);
                     var resdata = res.data;
-                    $(".amount").data('to',resdata.amount);
-                    $(".totalnum").data('to',resdata.totalNum);
-                    $(".invoicenum").data('to',resdata.invoiceNum);
-                    $(".adnum").data('to',resdata.adNum);
+                    $(".amount").attr('data-to',resdata.amount);
+                    $(".totalnum").attr('data-to',resdata.totalNum);
+                    $(".invoicenum").attr('data-to',resdata.invoiceNum);
+                    $(".adnum").attr('data-to',resdata.adNum);
                     $('.timer').each(function(){
-                        $(this).countTo({
-                        });
-                        window.setTimeout(function(){
-                            $(".amount").data('from',resdata.amount);
-                            $(".totalnum").data('from',resdata.totalNum);
-                            $(".invoicenum").data('from',resdata.invoiceNum);
-                            $(".adnum").data('from',resdata.adNum);
-                        },1200)
+                        $(this).countTo();
                     });
+                    window.setTimeout(function(){
+                        $(".amount").attr('data-from',resdata.amount);
+                        $(".totalnum").attr('data-from',resdata.totalNum);
+                        $(".invoicenum").attr('data-from',resdata.invoiceNum);
+                        $(".adnum").attr('data-from',resdata.adNum);
+                    },2000)
                 }
             })
         },
@@ -187,7 +187,8 @@ require(
             window.setInterval(function(){
                 var date = new Date();
                 var month =date.getMonth() + 1;
-                if(month != monthNow){
+                var hour = date.getHours(); 
+                if(month != monthNow && hour>5){
                     $("#charts1").remove();
                     var $charts1 = $('<div class="charts charts1" id="charts1"></div>');
                     $(".data1").append($charts1);
@@ -214,7 +215,8 @@ require(
             window.setInterval(function(){
                 var date = new Date();
                 var hour = date.getHours();
-                if(hour != hourNow){
+                var minutes = new Date().getMinutes();
+                if(hour != hourNow && minutes>29){
                     $("#charts4").remove();
                     var $charts4 = $('<div class="charts charts4" id="charts4"></div>');
                     $(".data4").append($charts4);
@@ -247,13 +249,12 @@ require(
                     })  
                     hourNow = hour;
                 }
-            },60000);
+            },300000);
         },
 		datas:function(){		
             var date = new Date();
             monthNow = date.getMonth() + 1;
             hourNow = date.getHours();
-            console.log(monthNow,hourNow);
             var that = this;
             $.ajax({
                 url:HOST+"/dashboard/countMonth",
@@ -410,7 +411,7 @@ require(
                 ],
                 yAxis : [
                   {
-                    name : '金额(万)',
+                    name : '笔数(万)',
                     splitLine:{show: false}, 
                     type : 'value',
                     axisLabel:{
@@ -592,12 +593,17 @@ require(
                                 }
                             },
                         markPoint : {
-                            symbolSize: 0,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+                            symbol:'circle',
+                            symbolSize : 8,     // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
                             itemStyle: {
                                 normal: {
-                                    label: {
-                                        show: false
-                                    }
+                                    label: {  
+                                        show: true,  
+                                        textStyle: {  
+                                            color: '#fff' ,
+                                            fontSize:0 
+                                        }  
+                                    } 
                                 },
                                 emphasis: {
                                    label: {  
@@ -629,7 +635,16 @@ require(
                             },
                             itemStyle:{
                                 normal:{
-                                    label:{show:false}
+                                    label: {  
+                                        show: true,  
+                                        textStyle: {  
+                                            color: '#fff',
+                                            fontSize:0   
+                                        },
+                                        areaStyle:{
+                                            color:"fff"
+                                        }  
+                                    }  
                                 },
                                 emphasis: {
                                     label: {  
@@ -737,7 +752,8 @@ require(
         data6:function(data){
             var datax = [],datay = [];
             var total = 0;
-            $.each(data,function(k,v){
+            var dataA = [data[0],data[3],data[1],data[4],data[2]];
+            $.each(dataA,function(k,v){
                 datax.push(v.name);
                 datay.push(v.value);
                 total+= parseInt(v.value);
