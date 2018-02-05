@@ -594,7 +594,7 @@ require(
                             },
                         markPoint : {
                             symbol:'circle',
-                            symbolSize : 8,     // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+                            symbolSize : 5,     // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
                             itemStyle: {
                                 normal: {
                                     label: {  
@@ -627,7 +627,7 @@ require(
                         markPoint : {
                             symbol:'circle',
                             symbolSize : function (v){
-                                return 10
+                                return 15
                             },
                             effect : {
                                 show: true,
