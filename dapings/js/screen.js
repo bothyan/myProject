@@ -631,7 +631,8 @@ require(
                             },
                             effect : {
                                 show: true,
-                                shadowBlur : 0
+                                shadowBlur : 0,
+			        period: 10	    
                             },
                             itemStyle:{
                                 normal:{
