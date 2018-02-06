@@ -632,7 +632,7 @@ require(
                             effect : {
                                 show: true,
                                 shadowBlur : 0,
-			        period: 10	    
+			        period: 5	    
                             },
                             itemStyle:{
                                 normal:{
